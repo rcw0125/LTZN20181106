@@ -1,0 +1,6 @@
+
+1.data模块：对数据库的操作
+2.CalFrameWork模块：公式计算
+根据数据库不同引用
+Oracle.ManagedDataAccess
+MySql.Data
