@@ -14,7 +14,8 @@ namespace LTZN
         [STAThread]
         static void Main()
         {
-            Rcw.Data.DbContext.SetDbName(DbContext.DbName.ltzn39);
+            DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.204", "orcl", "LF", "LF");
+            DbContext.DefaultDataSourceName = "ltzn";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new 炼铁智能主窗体());

@@ -34,8 +34,6 @@
             this.btnDelete_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel1_PlanOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_PlanOrder = new DevExpress.XtraGrid.GridControl();
             this.gridView_PlanOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnc_id = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -95,7 +93,7 @@
             // btnDelete_PlanOrder
             // 
             this.btnDelete_PlanOrder.ImageOptions.ImageUri.Uri = "Cancel;Size16x16";
-            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(728, 8);
+            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(469, 8);
             this.btnDelete_PlanOrder.Margin = new System.Windows.Forms.Padding(120, 8, 3, 3);
             this.btnDelete_PlanOrder.Name = "btnDelete_PlanOrder";
             this.btnDelete_PlanOrder.Size = new System.Drawing.Size(75, 23);
@@ -109,8 +107,6 @@
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnQuery_PlanOrder);
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnAdd_PlanOrder);
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnUpdate_PlanOrder);
-            this.flowLayoutPanel1_PlanOrder.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel1_PlanOrder.Controls.Add(this.simpleButton2);
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnDelete_PlanOrder);
             this.flowLayoutPanel1_PlanOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1_PlanOrder.Location = new System.Drawing.Point(0, 0);
@@ -133,28 +129,6 @@
             this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEdit1.TabIndex = 5;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.ImageUri.Uri = "Preview;Size16x16";
-            this.simpleButton1.Location = new System.Drawing.Point(449, 8);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(100, 8, 3, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "炉次预览";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.ImageUri.Uri = "Pie;Size16x16";
-            this.simpleButton2.Location = new System.Drawing.Point(530, 8);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 4;
-            this.simpleButton2.Text = "生成计划";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // gridControl_PlanOrder
             // 
@@ -318,7 +292,5 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

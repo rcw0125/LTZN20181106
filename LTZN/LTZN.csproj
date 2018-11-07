@@ -288,6 +288,8 @@
     <Compile Include="生产计划\planOrderFrm.Designer.cs">
       <DependentUpon>planOrderFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="生产计划\wdjg.cs" />
+    <Compile Include="调度\ddluci.cs" />
     <Compile Include="质量日报\DDTTY.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -624,6 +626,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\ddluci.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
