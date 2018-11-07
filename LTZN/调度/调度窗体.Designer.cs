@@ -47,9 +47,46 @@
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.flowLayoutPanel1_PlanOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnQuery_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.tpst = new System.Windows.Forms.TabPage();
+            this.gridControl_ddluci = new DevExpress.XtraGrid.GridControl();
+            this.ddluciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView_ddluci = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colluci = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzdsj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTimeEdit_zdsj = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.coldgsj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTimeEdit_dgsj = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.colkksj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldksj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTimeEdit_dksj = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.coltzsj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTimeEdit_tzsj = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.colwdsj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colquchu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.colfeliang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfesi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfemn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfep = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfeti = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfeni = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhasio2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhacao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhamgo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhaal2o3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhatio2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colzhar2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSaveEnable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.STLR = new System.Windows.Forms.TabPage();
             this.grpFe1 = new System.Windows.Forms.GroupBox();
@@ -442,6 +479,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             this.flowLayoutPanel1_PlanOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            this.tpst.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_ddluci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddluciBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ddluci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_zdsj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_dgsj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_dksj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_tzsj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.STLR.SuspendLayout();
             this.grpFe1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputG1_23)).BeginInit();
@@ -649,6 +696,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TcPlan);
+            this.tabControl1.Controls.Add(this.tpst);
             this.tabControl1.Controls.Add(this.STLR);
             this.tabControl1.Controls.Add(this.MFFX);
             this.tabControl1.Controls.Add(this.JTFX);
@@ -806,10 +854,8 @@
             // flowLayoutPanel1_PlanOrder
             // 
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.comboBoxEdit1);
-            this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnQuery_PlanOrder);
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.simpleButton1);
             this.flowLayoutPanel1_PlanOrder.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel1_PlanOrder.Controls.Add(this.btnDelete_PlanOrder);
             this.flowLayoutPanel1_PlanOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1_PlanOrder.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1_PlanOrder.Name = "flowLayoutPanel1_PlanOrder";
@@ -831,21 +877,10 @@
             this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEdit1.TabIndex = 5;
             // 
-            // btnQuery_PlanOrder
-            // 
-            this.btnQuery_PlanOrder.ImageOptions.ImageUri.Uri = "Zoom;Size16x16";
-            this.btnQuery_PlanOrder.Location = new System.Drawing.Point(129, 8);
-            this.btnQuery_PlanOrder.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.btnQuery_PlanOrder.Name = "btnQuery_PlanOrder";
-            this.btnQuery_PlanOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery_PlanOrder.TabIndex = 1;
-            this.btnQuery_PlanOrder.Text = "查询";
-            this.btnQuery_PlanOrder.Click += new System.EventHandler(this.btnQuery_PlanOrder_Click);
-            // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.ImageUri.Uri = "Preview;Size16x16";
-            this.simpleButton1.Location = new System.Drawing.Point(307, 8);
+            this.simpleButton1.Location = new System.Drawing.Point(226, 8);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(100, 8, 3, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
@@ -856,7 +891,7 @@
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.ImageUri.Uri = "Pie;Size16x16";
-            this.simpleButton2.Location = new System.Drawing.Point(388, 8);
+            this.simpleButton2.Location = new System.Drawing.Point(307, 8);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
@@ -864,15 +899,373 @@
             this.simpleButton2.Text = "生成计划";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // tpst
+            // 
+            this.tpst.Controls.Add(this.gridControl_ddluci);
+            this.tpst.Controls.Add(this.flowLayoutPanel1);
+            this.tpst.Location = new System.Drawing.Point(4, 32);
+            this.tpst.Name = "tpst";
+            this.tpst.Padding = new System.Windows.Forms.Padding(3);
+            this.tpst.Size = new System.Drawing.Size(1012, 449);
+            this.tpst.TabIndex = 12;
+            this.tpst.Text = "生铁";
+            this.tpst.UseVisualStyleBackColor = true;
+            // 
+            // gridControl_ddluci
+            // 
+            this.gridControl_ddluci.DataSource = this.ddluciBindingSource;
+            this.gridControl_ddluci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_ddluci.Location = new System.Drawing.Point(3, 46);
+            this.gridControl_ddluci.MainView = this.gridView_ddluci;
+            this.gridControl_ddluci.Name = "gridControl_ddluci";
+            this.gridControl_ddluci.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTimeEdit_dgsj,
+            this.repositoryItemTimeEdit_zdsj,
+            this.repositoryItemTimeEdit_tzsj,
+            this.repositoryItemComboBox2,
+            this.repositoryItemTimeEdit_dksj});
+            this.gridControl_ddluci.Size = new System.Drawing.Size(1006, 400);
+            this.gridControl_ddluci.TabIndex = 6;
+            this.gridControl_ddluci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_ddluci});
+            // 
+            // ddluciBindingSource
+            // 
+            this.ddluciBindingSource.DataSource = typeof(LTZN.ddluci);
+            // 
+            // gridView_ddluci
+            // 
+            this.gridView_ddluci.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colC_ID,
+            this.colluci,
+            this.colzdsj,
+            this.coldgsj,
+            this.colkksj,
+            this.coldksj,
+            this.coltzsj,
+            this.colwdsj,
+            this.colquchu,
+            this.colfeliang,
+            this.colfec,
+            this.colfesi,
+            this.colfemn,
+            this.colfep,
+            this.colfes,
+            this.colfeti,
+            this.colfecr,
+            this.colfeni,
+            this.colzhasio2,
+            this.colzhacao,
+            this.colzhamgo,
+            this.colzhaal2o3,
+            this.colzhas,
+            this.colzhatio2,
+            this.colzhar2,
+            this.colSaveEnable});
+            this.gridView_ddluci.GridControl = this.gridControl_ddluci;
+            this.gridView_ddluci.Name = "gridView_ddluci";
+            this.gridView_ddluci.OptionsView.ShowGroupPanel = false;
+            this.gridView_ddluci.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView_ddluci_RowCellStyle);
+            // 
+            // colC_ID
+            // 
+            this.colC_ID.FieldName = "C_ID";
+            this.colC_ID.Name = "colC_ID";
+            // 
+            // colluci
+            // 
+            this.colluci.FieldName = "luci";
+            this.colluci.Name = "colluci";
+            this.colluci.OptionsColumn.AllowEdit = false;
+            this.colluci.Visible = true;
+            this.colluci.VisibleIndex = 0;
+            // 
+            // colzdsj
+            // 
+            this.colzdsj.ColumnEdit = this.repositoryItemTimeEdit_zdsj;
+            this.colzdsj.FieldName = "zdsj";
+            this.colzdsj.Name = "colzdsj";
+            this.colzdsj.OptionsColumn.AllowEdit = false;
+            this.colzdsj.Visible = true;
+            this.colzdsj.VisibleIndex = 1;
+            // 
+            // repositoryItemTimeEdit_zdsj
+            // 
+            this.repositoryItemTimeEdit_zdsj.AutoHeight = false;
+            this.repositoryItemTimeEdit_zdsj.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit_zdsj.DisplayFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_zdsj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_zdsj.EditFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_zdsj.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_zdsj.Mask.EditMask = "t";
+            this.repositoryItemTimeEdit_zdsj.Name = "repositoryItemTimeEdit_zdsj";
+            // 
+            // coldgsj
+            // 
+            this.coldgsj.ColumnEdit = this.repositoryItemTimeEdit_dgsj;
+            this.coldgsj.FieldName = "dgsj";
+            this.coldgsj.Name = "coldgsj";
+            this.coldgsj.Visible = true;
+            this.coldgsj.VisibleIndex = 2;
+            // 
+            // repositoryItemTimeEdit_dgsj
+            // 
+            this.repositoryItemTimeEdit_dgsj.AutoHeight = false;
+            this.repositoryItemTimeEdit_dgsj.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit_dgsj.DisplayFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_dgsj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_dgsj.EditFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_dgsj.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_dgsj.Mask.EditMask = "t";
+            this.repositoryItemTimeEdit_dgsj.Name = "repositoryItemTimeEdit_dgsj";
+            // 
+            // colkksj
+            // 
+            this.colkksj.FieldName = "kksj";
+            this.colkksj.Name = "colkksj";
+            // 
+            // coldksj
+            // 
+            this.coldksj.ColumnEdit = this.repositoryItemTimeEdit_dksj;
+            this.coldksj.FieldName = "dksj";
+            this.coldksj.Name = "coldksj";
+            this.coldksj.Visible = true;
+            this.coldksj.VisibleIndex = 4;
+            // 
+            // repositoryItemTimeEdit_dksj
+            // 
+            this.repositoryItemTimeEdit_dksj.AutoHeight = false;
+            this.repositoryItemTimeEdit_dksj.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit_dksj.DisplayFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_dksj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_dksj.EditFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_dksj.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_dksj.Mask.EditMask = "t";
+            this.repositoryItemTimeEdit_dksj.Name = "repositoryItemTimeEdit_dksj";
+            // 
+            // coltzsj
+            // 
+            this.coltzsj.ColumnEdit = this.repositoryItemTimeEdit_tzsj;
+            this.coltzsj.FieldName = "tzsj";
+            this.coltzsj.Name = "coltzsj";
+            this.coltzsj.Visible = true;
+            this.coltzsj.VisibleIndex = 3;
+            // 
+            // repositoryItemTimeEdit_tzsj
+            // 
+            this.repositoryItemTimeEdit_tzsj.AutoHeight = false;
+            this.repositoryItemTimeEdit_tzsj.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit_tzsj.DisplayFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_tzsj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_tzsj.EditFormat.FormatString = "t";
+            this.repositoryItemTimeEdit_tzsj.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemTimeEdit_tzsj.Mask.EditMask = "t";
+            this.repositoryItemTimeEdit_tzsj.Name = "repositoryItemTimeEdit_tzsj";
+            // 
+            // colwdsj
+            // 
+            this.colwdsj.FieldName = "wdsj";
+            this.colwdsj.Name = "colwdsj";
+            this.colwdsj.Visible = true;
+            this.colwdsj.VisibleIndex = 5;
+            // 
+            // colquchu
+            // 
+            this.colquchu.ColumnEdit = this.repositoryItemComboBox2;
+            this.colquchu.FieldName = "quchu";
+            this.colquchu.Name = "colquchu";
+            this.colquchu.Visible = true;
+            this.colquchu.VisibleIndex = 6;
+            // 
+            // repositoryItemComboBox2
+            // 
+            this.repositoryItemComboBox2.AutoHeight = false;
+            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox2.Items.AddRange(new object[] {
+            "炼钢",
+            "铸铁"});
+            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
+            // 
+            // colfeliang
+            // 
+            this.colfeliang.FieldName = "feliang";
+            this.colfeliang.Name = "colfeliang";
+            this.colfeliang.Visible = true;
+            this.colfeliang.VisibleIndex = 7;
+            // 
+            // colfec
+            // 
+            this.colfec.FieldName = "fec";
+            this.colfec.Name = "colfec";
+            this.colfec.OptionsColumn.AllowEdit = false;
+            this.colfec.Visible = true;
+            this.colfec.VisibleIndex = 8;
+            // 
+            // colfesi
+            // 
+            this.colfesi.FieldName = "fesi";
+            this.colfesi.Name = "colfesi";
+            this.colfesi.OptionsColumn.AllowEdit = false;
+            this.colfesi.Visible = true;
+            this.colfesi.VisibleIndex = 9;
+            // 
+            // colfemn
+            // 
+            this.colfemn.FieldName = "femn";
+            this.colfemn.Name = "colfemn";
+            this.colfemn.OptionsColumn.AllowEdit = false;
+            this.colfemn.Visible = true;
+            this.colfemn.VisibleIndex = 10;
+            // 
+            // colfep
+            // 
+            this.colfep.FieldName = "fep";
+            this.colfep.Name = "colfep";
+            this.colfep.OptionsColumn.AllowEdit = false;
+            this.colfep.Visible = true;
+            this.colfep.VisibleIndex = 11;
+            // 
+            // colfes
+            // 
+            this.colfes.FieldName = "fes";
+            this.colfes.Name = "colfes";
+            this.colfes.OptionsColumn.AllowEdit = false;
+            this.colfes.Visible = true;
+            this.colfes.VisibleIndex = 12;
+            // 
+            // colfeti
+            // 
+            this.colfeti.FieldName = "feti";
+            this.colfeti.Name = "colfeti";
+            this.colfeti.OptionsColumn.AllowEdit = false;
+            this.colfeti.Visible = true;
+            this.colfeti.VisibleIndex = 13;
+            // 
+            // colfecr
+            // 
+            this.colfecr.FieldName = "fecr";
+            this.colfecr.Name = "colfecr";
+            this.colfecr.OptionsColumn.AllowEdit = false;
+            this.colfecr.Visible = true;
+            this.colfecr.VisibleIndex = 14;
+            // 
+            // colfeni
+            // 
+            this.colfeni.FieldName = "feni";
+            this.colfeni.Name = "colfeni";
+            this.colfeni.OptionsColumn.AllowEdit = false;
+            this.colfeni.Visible = true;
+            this.colfeni.VisibleIndex = 15;
+            // 
+            // colzhasio2
+            // 
+            this.colzhasio2.FieldName = "zhasio2";
+            this.colzhasio2.Name = "colzhasio2";
+            this.colzhasio2.OptionsColumn.AllowEdit = false;
+            this.colzhasio2.Visible = true;
+            this.colzhasio2.VisibleIndex = 16;
+            // 
+            // colzhacao
+            // 
+            this.colzhacao.FieldName = "zhacao";
+            this.colzhacao.Name = "colzhacao";
+            this.colzhacao.OptionsColumn.AllowEdit = false;
+            this.colzhacao.Visible = true;
+            this.colzhacao.VisibleIndex = 17;
+            // 
+            // colzhamgo
+            // 
+            this.colzhamgo.FieldName = "zhamgo";
+            this.colzhamgo.Name = "colzhamgo";
+            this.colzhamgo.OptionsColumn.AllowEdit = false;
+            this.colzhamgo.Visible = true;
+            this.colzhamgo.VisibleIndex = 18;
+            // 
+            // colzhaal2o3
+            // 
+            this.colzhaal2o3.FieldName = "zhaal2o3";
+            this.colzhaal2o3.Name = "colzhaal2o3";
+            this.colzhaal2o3.OptionsColumn.AllowEdit = false;
+            this.colzhaal2o3.Visible = true;
+            this.colzhaal2o3.VisibleIndex = 19;
+            // 
+            // colzhas
+            // 
+            this.colzhas.FieldName = "zhas";
+            this.colzhas.Name = "colzhas";
+            this.colzhas.OptionsColumn.AllowEdit = false;
+            this.colzhas.Visible = true;
+            this.colzhas.VisibleIndex = 20;
+            // 
+            // colzhatio2
+            // 
+            this.colzhatio2.FieldName = "zhatio2";
+            this.colzhatio2.Name = "colzhatio2";
+            this.colzhatio2.OptionsColumn.AllowEdit = false;
+            this.colzhatio2.Visible = true;
+            this.colzhatio2.VisibleIndex = 21;
+            // 
+            // colzhar2
+            // 
+            this.colzhar2.FieldName = "zhar2";
+            this.colzhar2.Name = "colzhar2";
+            this.colzhar2.OptionsColumn.AllowEdit = false;
+            this.colzhar2.Visible = true;
+            this.colzhar2.VisibleIndex = 22;
+            // 
+            // colSaveEnable
+            // 
+            this.colSaveEnable.FieldName = "SaveEnable";
+            this.colSaveEnable.Name = "colSaveEnable";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.simpleButton3);
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdate_PlanOrder);
+            this.flowLayoutPanel1.Controls.Add(this.btnDelete_PlanOrder);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1006, 43);
+            this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.ImageUri.Uri = "Zoom;Size16x16";
+            this.simpleButton3.Location = new System.Drawing.Point(30, 8);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(30, 8, 3, 3);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 4;
+            this.simpleButton3.Text = "查询";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // btnUpdate_PlanOrder
+            // 
+            this.btnUpdate_PlanOrder.ImageOptions.ImageUri.Uri = "Edit;Size16x16";
+            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(358, 8);
+            this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(250, 8, 3, 3);
+            this.btnUpdate_PlanOrder.Name = "btnUpdate_PlanOrder";
+            this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate_PlanOrder.TabIndex = 3;
+            this.btnUpdate_PlanOrder.Text = "保存";
+            this.btnUpdate_PlanOrder.Click += new System.EventHandler(this.btnUpdate_PlanOrder_Click);
+            // 
             // btnDelete_PlanOrder
             // 
             this.btnDelete_PlanOrder.ImageOptions.ImageUri.Uri = "Cancel;Size16x16";
-            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(586, 8);
-            this.btnDelete_PlanOrder.Margin = new System.Windows.Forms.Padding(120, 8, 3, 3);
+            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(676, 8);
+            this.btnDelete_PlanOrder.Margin = new System.Windows.Forms.Padding(240, 8, 3, 3);
             this.btnDelete_PlanOrder.Name = "btnDelete_PlanOrder";
             this.btnDelete_PlanOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete_PlanOrder.TabIndex = 4;
+            this.btnDelete_PlanOrder.TabIndex = 5;
             this.btnDelete_PlanOrder.Text = "删除";
+            this.btnDelete_PlanOrder.Click += new System.EventHandler(this.btnDelete_PlanOrder_Click_1);
             // 
             // STLR
             // 
@@ -6719,6 +7112,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             this.flowLayoutPanel1_PlanOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            this.tpst.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_ddluci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddluciBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ddluci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_zdsj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_dgsj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_dksj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_tzsj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.STLR.ResumeLayout(false);
             this.grpFe1.ResumeLayout(false);
             this.grpFe1.PerformLayout();
@@ -7335,9 +7738,46 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnluhao;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1_PlanOrder;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.SimpleButton btnQuery_PlanOrder;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.TabPage tpst;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private DevExpress.XtraGrid.GridControl gridControl_ddluci;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_ddluci;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate_PlanOrder;
+        private System.Windows.Forms.BindingSource ddluciBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colC_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colluci;
+        private DevExpress.XtraGrid.Columns.GridColumn colzdsj;
+        private DevExpress.XtraGrid.Columns.GridColumn coldgsj;
+        private DevExpress.XtraGrid.Columns.GridColumn colkksj;
+        private DevExpress.XtraGrid.Columns.GridColumn coldksj;
+        private DevExpress.XtraGrid.Columns.GridColumn coltzsj;
+        private DevExpress.XtraGrid.Columns.GridColumn colwdsj;
+        private DevExpress.XtraGrid.Columns.GridColumn colfeliang;
+        private DevExpress.XtraGrid.Columns.GridColumn colfec;
+        private DevExpress.XtraGrid.Columns.GridColumn colfesi;
+        private DevExpress.XtraGrid.Columns.GridColumn colfemn;
+        private DevExpress.XtraGrid.Columns.GridColumn colfep;
+        private DevExpress.XtraGrid.Columns.GridColumn colfes;
+        private DevExpress.XtraGrid.Columns.GridColumn colfeti;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecr;
+        private DevExpress.XtraGrid.Columns.GridColumn colfeni;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhasio2;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhacao;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhamgo;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhaal2o3;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhas;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhatio2;
+        private DevExpress.XtraGrid.Columns.GridColumn colzhar2;
+        private DevExpress.XtraGrid.Columns.GridColumn colSaveEnable;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_dgsj;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_zdsj;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_tzsj;
+        private DevExpress.XtraGrid.Columns.GridColumn colquchu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_dksj;
         private DevExpress.XtraEditors.SimpleButton btnDelete_PlanOrder;
     }
 }
