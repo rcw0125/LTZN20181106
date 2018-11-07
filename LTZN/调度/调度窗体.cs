@@ -159,18 +159,23 @@ namespace LTZN.调度
             {
                 if (p.IsInRole("2#大烧"))
                 {
-                    STLR.Parent = null;
+                    //STLR.Parent = null;
 
                 }
                 if (p.IsInRole("1#大烧"))
                 {
-                    STLR.Parent = null;
+                    //STLR.Parent = null;
 
                 }
                 if (p.IsInRole("无时间限制") || this.dateTimePicker1.Value.Date > DateTime.Now - TimeSpan.FromHours(32))
                 {
                     if (p.IsInRole("调度"))
                     {
+                        //添加新增权限 20181108 
+                        btnUpdate_PlanOrder.Enabled = true;
+                        btnDelete_PlanOrder.Enabled = true;
+                        simpleButton2.Enabled = true;
+
                         c1FlexGrid1.AllowAddNew = true;
                         c1FlexGrid1.AllowEditing = true;
                         c1FlexGrid1.AllowDelete = true;
@@ -384,6 +389,10 @@ namespace LTZN.调度
             }
             else
             {
+                //添加新增权限 20181108 
+                btnUpdate_PlanOrder.Enabled = false;
+                btnDelete_PlanOrder.Enabled = false;
+                simpleButton2.Enabled = false;
 
                 buttonSave.Visible = false;
 
@@ -574,20 +583,20 @@ namespace LTZN.调度
                     dr.Close();
                     cn.Close();
                     break;
-                case "STLR":
-                    if (System.DateTime.Today >= dateTimePicker1.Value.AddDays(-2))
-                    {
-                        try
-                        { 
-                           selectLuci(this.dateTimePicker1.Value.Date, this.InputCHUTE1.Text, this.InputCHUTE2.Value);
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show("出错：+" + ex);
-                        }
+                //case "STLR":
+                //    if (System.DateTime.Today >= dateTimePicker1.Value.AddDays(-2))
+                //    {
+                //        try
+                //        { 
+                //           selectLuci(this.dateTimePicker1.Value.Date, this.InputCHUTE1.Text, this.InputCHUTE2.Value);
+                //        }
+                //        catch(Exception ex)
+                //        {
+                //            MessageBox.Show("出错：+" + ex);
+                //        }
                    
-                    }
-                    break;
+                //    }
+                //    break;
                 case "tpst":
                     if (System.DateTime.Today >= dateTimePicker1.Value.AddDays(-2))
                     {
@@ -641,8 +650,7 @@ namespace LTZN.调度
             }
             更改 = false;
             pDate = dateTimePicker1.Value.Date;
-            pBanci = InputCHUTE1.Text;
-            pBanluci = InputCHUTE2.Value;
+          
             buttonSave.Enabled = false;
             this.Cursor = Cursors.Default;
         }
@@ -760,477 +768,63 @@ namespace LTZN.调度
             buttonSave.Enabled = true;
         }
 
-        private void selectLuci(DateTime rq,string banci,decimal banluci)
-        {
-            this.oracleConnection1.Open();
-            this.oraCmdSelectLUCI.Parameters["RQ"].Value = rq;
-            this.oraCmdSelectLUCI.Parameters["BANCI"].Value = banci;
-            this.oraCmdSelectLUCI.Parameters["BANLUCI"].Value = banluci;
-            this.oraCmdSelectLUCI.ExecuteNonQuery();
-            if (this.oraCmdSelectLUCI.Parameters["G1LUCI"].Value == System.DBNull.Value)
-                this.InputG1_01.Value = "";
-            else
-                this.InputG1_01.Value = (string)this.oraCmdSelectLUCI.Parameters["G1LUCI"].Value;
-            this.InputG1_02.Value = this.oraCmdSelectLUCI.Parameters["G1ZDSJ"].Value;
-            this.InputG1_03.Value = this.oraCmdSelectLUCI.Parameters["G1DGSJ"].Value;
-            this.InputG1_04.Value = this.oraCmdSelectLUCI.Parameters["G1DKSJ"].Value;
-            this.InputG1_05.Value = this.oraCmdSelectLUCI.Parameters["G1TZSJ"].Value;
-            this.InputG1_06.Value = this.oraCmdSelectLUCI.Parameters["G1WDSJ"].Value;
-            if (this.oraCmdSelectLUCI.Parameters["G1QUCHU"].Value == System.DBNull.Value)
-                this.InputG1_07.Text = "炼钢";
-            else
-                this.InputG1_07.Text = (string)this.oraCmdSelectLUCI.Parameters["G1QUCHU"].Value;
-            this.InputG1_08.Value = this.oraCmdSelectLUCI.Parameters["G1FELIANG"].Value;
-            this.InputG1_09.Value = this.oraCmdSelectLUCI.Parameters["G1FEC"].Value;
-            this.InputG1_10.Value = this.oraCmdSelectLUCI.Parameters["G1FESI"].Value;
-            this.InputG1_11.Value = this.oraCmdSelectLUCI.Parameters["G1FEMN"].Value;
-            this.InputG1_12.Value = this.oraCmdSelectLUCI.Parameters["G1FEP"].Value;
-            this.InputG1_13.Value = this.oraCmdSelectLUCI.Parameters["G1FES"].Value;
-            this.InputG1_14.Value = this.oraCmdSelectLUCI.Parameters["G1FETI"].Value;
-            this.InputG1_15.Value = this.oraCmdSelectLUCI.Parameters["G1ZHASIO2"].Value;
-            this.InputG1_16.Value = this.oraCmdSelectLUCI.Parameters["G1ZHACAO"].Value;
-            this.InputG1_17.Value = this.oraCmdSelectLUCI.Parameters["G1ZHAMGO"].Value;
-            this.InputG1_18.Value = this.oraCmdSelectLUCI.Parameters["G1ZHAAL2O3"].Value;
-            this.InputG1_19.Value = this.oraCmdSelectLUCI.Parameters["G1ZHAS"].Value;
-            this.InputG1_20.Value = this.oraCmdSelectLUCI.Parameters["G1ZHATIO2"].Value;
-            this.InputG1_21.Value = this.oraCmdSelectLUCI.Parameters["G1ZHAR2"].Value;
-            this.InputG1_22.Value = this.oraCmdSelectLUCI.Parameters["G1FECR"].Value;
-            this.InputG1_23.Value = this.oraCmdSelectLUCI.Parameters["G1FENI"].Value;
-            if (this.oraCmdSelectLUCI.Parameters["G3LUCI"].Value == System.DBNull.Value)
-                this.InputG3_01.Value = "";
-            else
-                this.InputG3_01.Value = (string)this.oraCmdSelectLUCI.Parameters["G3LUCI"].Value;
-            this.InputG3_02.Value = this.oraCmdSelectLUCI.Parameters["G3ZDSJ"].Value;
-            this.InputG3_03.Value = this.oraCmdSelectLUCI.Parameters["G3DGSJ"].Value;
-            this.InputG3_04.Value = this.oraCmdSelectLUCI.Parameters["G3DKSJ"].Value;
-            this.InputG3_05.Value = this.oraCmdSelectLUCI.Parameters["G3TZSJ"].Value;
-            this.InputG3_06.Value = this.oraCmdSelectLUCI.Parameters["G3WDSJ"].Value;
-            if (this.oraCmdSelectLUCI.Parameters["G3QUCHU"].Value == System.DBNull.Value)
-                this.InputG3_07.Text = "炼钢";
-            else
-                this.InputG3_07.Text = (string)this.oraCmdSelectLUCI.Parameters["G3QUCHU"].Value;
-            this.InputG3_08.Value = this.oraCmdSelectLUCI.Parameters["G3FELIANG"].Value;
-            this.InputG3_09.Value = this.oraCmdSelectLUCI.Parameters["G3FEC"].Value;
-            this.InputG3_10.Value = this.oraCmdSelectLUCI.Parameters["G3FESI"].Value;
-            this.InputG3_11.Value = this.oraCmdSelectLUCI.Parameters["G3FEMN"].Value;
-            this.InputG3_12.Value = this.oraCmdSelectLUCI.Parameters["G3FEP"].Value;
-            this.InputG3_13.Value = this.oraCmdSelectLUCI.Parameters["G3FES"].Value;
-            this.InputG3_14.Value = this.oraCmdSelectLUCI.Parameters["G3FETI"].Value;
-            this.InputG3_15.Value = this.oraCmdSelectLUCI.Parameters["G3ZHASIO2"].Value;
-            this.InputG3_16.Value = this.oraCmdSelectLUCI.Parameters["G3ZHACAO"].Value;
-            this.InputG3_17.Value = this.oraCmdSelectLUCI.Parameters["G3ZHAMGO"].Value;
-            this.InputG3_18.Value = this.oraCmdSelectLUCI.Parameters["G3ZHAAL2O3"].Value;
-            this.InputG3_19.Value = this.oraCmdSelectLUCI.Parameters["G3ZHAS"].Value;
-            this.InputG3_20.Value = this.oraCmdSelectLUCI.Parameters["G3ZHATIO2"].Value;
-            this.InputG3_21.Value = this.oraCmdSelectLUCI.Parameters["G3ZHAR2"].Value;
-            this.InputG3_22.Value = this.oraCmdSelectLUCI.Parameters["G3FECR"].Value;
-            this.InputG3_23.Value = this.oraCmdSelectLUCI.Parameters["G3FENI"].Value;
-            if (this.oraCmdSelectLUCI.Parameters["G5LUCI"].Value == System.DBNull.Value)
-                this.InputG5_01.Value = "";
-            else
-                this.InputG5_01.Value = (string)this.oraCmdSelectLUCI.Parameters["G5LUCI"].Value;
-            this.InputG5_02.Value = this.oraCmdSelectLUCI.Parameters["G5ZDSJ"].Value;
-            this.InputG5_03.Value = this.oraCmdSelectLUCI.Parameters["G5DGSJ"].Value;
-            this.InputG5_04.Value = this.oraCmdSelectLUCI.Parameters["G5DKSJ"].Value;
-            this.InputG5_05.Value = this.oraCmdSelectLUCI.Parameters["G5TZSJ"].Value;
-            this.InputG5_06.Value = this.oraCmdSelectLUCI.Parameters["G5WDSJ"].Value;
-            if (this.oraCmdSelectLUCI.Parameters["G5QUCHU"].Value == System.DBNull.Value)
-                this.InputG5_07.Text = "炼钢";
-            else
-                this.InputG5_07.Text = (string)this.oraCmdSelectLUCI.Parameters["G5QUCHU"].Value;
-            this.InputG5_08.Value = this.oraCmdSelectLUCI.Parameters["G5FELIANG"].Value;
-            this.InputG5_09.Value = this.oraCmdSelectLUCI.Parameters["G5FEC"].Value;
-            this.InputG5_10.Value = this.oraCmdSelectLUCI.Parameters["G5FESI"].Value;
-            this.InputG5_11.Value = this.oraCmdSelectLUCI.Parameters["G5FEMN"].Value;
-            this.InputG5_12.Value = this.oraCmdSelectLUCI.Parameters["G5FEP"].Value;
-            this.InputG5_13.Value = this.oraCmdSelectLUCI.Parameters["G5FES"].Value;
-            this.InputG5_14.Value = this.oraCmdSelectLUCI.Parameters["G5FETI"].Value;
-            this.InputG5_15.Value = this.oraCmdSelectLUCI.Parameters["G5ZHASIO2"].Value;
-            this.InputG5_16.Value = this.oraCmdSelectLUCI.Parameters["G5ZHACAO"].Value;
-            this.InputG5_17.Value = this.oraCmdSelectLUCI.Parameters["G5ZHAMGO"].Value;
-            this.InputG5_18.Value = this.oraCmdSelectLUCI.Parameters["G5ZHAAL2O3"].Value;
-            this.InputG5_19.Value = this.oraCmdSelectLUCI.Parameters["G5ZHAS"].Value;
-            this.InputG5_20.Value = this.oraCmdSelectLUCI.Parameters["G5ZHATIO2"].Value;
-            this.InputG5_21.Value = this.oraCmdSelectLUCI.Parameters["G5ZHAR2"].Value;
-            this.InputG5_22.Value = this.oraCmdSelectLUCI.Parameters["G5FECR"].Value;
-            this.InputG5_23.Value = this.oraCmdSelectLUCI.Parameters["G5FENI"].Value;
-          
-            
-                if (this.oraCmdSelectLUCI.Parameters["G6LUCI"].Value == System.DBNull.Value)
-                    this.InputG6_01.Value = "";
-                else
-                    this.InputG6_01.Value = (string)this.oraCmdSelectLUCI.Parameters["G6LUCI"].Value;
-                this.InputG6_02.Value = this.oraCmdSelectLUCI.Parameters["G6ZDSJ"].Value;
-                this.InputG6_03.Value = this.oraCmdSelectLUCI.Parameters["G6DGSJ"].Value;
-                this.InputG6_04.Value = this.oraCmdSelectLUCI.Parameters["G6DKSJ"].Value;
-                this.InputG6_05.Value = this.oraCmdSelectLUCI.Parameters["G6TZSJ"].Value;
-                this.InputG6_06.Value = this.oraCmdSelectLUCI.Parameters["G6WDSJ"].Value;
-                if (this.oraCmdSelectLUCI.Parameters["G6QUCHU"].Value == System.DBNull.Value)
-                    this.InputG6_07.Text = "炼钢";
-                else
-                    this.InputG6_07.Text = (string)this.oraCmdSelectLUCI.Parameters["G6QUCHU"].Value;
-                this.InputG6_08.Value = this.oraCmdSelectLUCI.Parameters["G6FELIANG"].Value;
-                this.InputG6_09.Value = this.oraCmdSelectLUCI.Parameters["G6FEC"].Value;
-                this.InputG6_10.Value = this.oraCmdSelectLUCI.Parameters["G6FESI"].Value;
-                this.InputG6_11.Value = this.oraCmdSelectLUCI.Parameters["G6FEMN"].Value;
-                this.InputG6_12.Value = this.oraCmdSelectLUCI.Parameters["G6FEP"].Value;
-                this.InputG6_13.Value = this.oraCmdSelectLUCI.Parameters["G6FES"].Value;
-                this.InputG6_14.Value = this.oraCmdSelectLUCI.Parameters["G6FETI"].Value;
-                this.InputG6_15.Value = this.oraCmdSelectLUCI.Parameters["G6ZHASIO2"].Value;
-                this.InputG6_16.Value = this.oraCmdSelectLUCI.Parameters["G6ZHACAO"].Value;
-                this.InputG6_17.Value = this.oraCmdSelectLUCI.Parameters["G6ZHAMGO"].Value;
-                this.InputG6_18.Value = this.oraCmdSelectLUCI.Parameters["G6ZHAAL2O3"].Value;
-                this.InputG6_19.Value = this.oraCmdSelectLUCI.Parameters["G6ZHAS"].Value;
-                this.InputG6_20.Value = this.oraCmdSelectLUCI.Parameters["G6ZHATIO2"].Value;
-                this.InputG6_21.Value = this.oraCmdSelectLUCI.Parameters["G6ZHAR2"].Value;
-                this.InputG6_22.Value = this.oraCmdSelectLUCI.Parameters["G6FECR"].Value;
-                this.InputG6_23.Value = this.oraCmdSelectLUCI.Parameters["G6FENI"].Value;
-            
-            this.oracleConnection1.Close();
-        }
+      
 
         //删除时间
-        private void InputDateTime_Del(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == 46)
-            {
-                ((C1DateEdit)sender).Value = System.DBNull.Value;
-                return;
-            }
-            if (e.KeyCode == Keys.Enter)
-            {
-                switch (((C1DateEdit)sender).Name)
-                {
-                    case "InputG1_04":
-                        InputG3_04.Focus();
-                        break;
-                    case "InputG3_04":
-                        InputG5_04.Focus();
-                        break;
-                    case "InputG5_04":
-                        InputG6_04.Focus();
-                        break;
-                }
-            }
+        //private void InputDateTime_Del(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyValue == 46)
+        //    {
+        //        ((C1DateEdit)sender).Value = System.DBNull.Value;
+        //        return;
+        //    }
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        switch (((C1DateEdit)sender).Name)
+        //        {
+        //            case "InputG1_04":
+        //                InputG3_04.Focus();
+        //                break;
+        //            case "InputG3_04":
+        //                InputG5_04.Focus();
+        //                break;
+        //            case "InputG5_04":
+        //                InputG6_04.Focus();
+        //                break;
+        //        }
+        //    }
 
-        }
+        //}
 
         //碱度计算
         private void InputG1R2(object sender, System.EventArgs e)
         {
 
-            if (InputG1_15.Value == System.DBNull.Value || InputG1_16.Value == System.DBNull.Value || (decimal)InputG1_15.Value==0)
-                {
-                    InputG1_21.Value = System.DBNull.Value;
-                    return;
-                }
-                InputG1_21.Value = ((decimal)InputG1_16.Value) / ((decimal)InputG1_15.Value);
+            //if (InputG1_15.Value == System.DBNull.Value || InputG1_16.Value == System.DBNull.Value || (decimal)InputG1_15.Value==0)
+            //    {
+            //        InputG1_21.Value = System.DBNull.Value;
+            //        return;
+            //    }
+            //    InputG1_21.Value = ((decimal)InputG1_16.Value) / ((decimal)InputG1_15.Value);
 
         }
 
-        private void InputG3R2(object sender, System.EventArgs e)
-        {
-
-            if (InputG3_15.Value == System.DBNull.Value || InputG3_16.Value == System.DBNull.Value || (decimal)InputG3_15.Value == 0)
-            {
-                InputG3_21.Value = System.DBNull.Value;
-                return;
-            }
-            InputG3_21.Value = ((decimal)InputG3_16.Value) / ((decimal)InputG3_15.Value);         
-
-        }
-
-        private void InputG5R2(object sender, System.EventArgs e)
-        {
-
-            if (InputG5_15.Value == System.DBNull.Value || InputG5_16.Value == System.DBNull.Value || (decimal)InputG5_15.Value == 0)
-                {
-                    InputG5_21.Value = System.DBNull.Value;
-                    return;
-                }
-               InputG5_21.Value = ((decimal)InputG5_16.Value) / ((decimal)InputG5_15.Value);
-
-        }
-
-        private void InputG6R2(object sender, System.EventArgs e)
-        {
-
-            if (InputG6_15.Value == System.DBNull.Value || InputG6_16.Value == System.DBNull.Value || (decimal)InputG6_15.Value == 0)
-            {
-                InputG6_21.Value = System.DBNull.Value;
-                return;
-            }
-            InputG6_21.Value = ((decimal)InputG6_16.Value) / ((decimal)InputG6_15.Value);
-
-        }
+     
 
 
-        private void InputG1_08_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InputG3_08.Focus();
-            }
-        }
-
-        private void InputG3_08_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InputG5_08.Focus();
-            }
-        }
+       
 
 
-        private void InputG5_08_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InputG6_08.Focus();
-            }
-        }
-
-        //修正对罐和堵口时间
-        private DateTime xiuzhengTime(DateTime t)
-        {
-            DateTime resultTime =new DateTime(t.Year,t.Month,t.Day,t.Hour,t.Minute,0);
-            if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value <= 1 && resultTime.Hour > 22)
-            {
-                if (!resultTime.Date.Equals(this.dateTimePicker1.Value.Date - TimeSpan.FromDays(1)))
-                    resultTime = this.dateTimePicker1.Value.Date - TimeSpan.FromDays(1) + (resultTime - resultTime.Date);
-            }
-            else
-            {
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 5 && resultTime.Hour < 2)
-                {
-                    if (!resultTime.Date.Equals(this.dateTimePicker1.Value.Date.AddDays(1)))
-                        resultTime = this.dateTimePicker1.Value.Date.AddDays(1) + (resultTime - resultTime.Date);
-                }
-                else
-                {
-                    if (!resultTime.Date.Equals(this.dateTimePicker1.Value.Date))
-                        resultTime = this.dateTimePicker1.Value.Date + (resultTime - resultTime.Date);
-                }
-            }
-            return resultTime;
-        }
-
-        public int wdjg1 = 50;
-        public int wdjg2 = 50;
-        public int wdjg3 = 50;
-        public int wdjg4 = 50;
-        public int wdjg5 = 50;
-        public int wdjg6 = 60;
-
-        private void InputG1_04_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG1_04.Value != System.DBNull.Value)
-                this.InputG1_04.Value = this.xiuzhengTime((DateTime)this.InputG1_04.Value);
-
-            if (this.InputG1_02.Value != System.DBNull.Value && this.InputG1_03.Value != System.DBNull.Value && this.InputG1_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG1_04.Value) > ((DateTime)this.InputG1_02.Value) && ((DateTime)this.InputG1_04.Value) - ((DateTime)this.InputG1_03.Value) > TimeSpan.FromMinutes(wdjg1))
-                {
-                    if ((DateTime)this.InputG1_02.Value - (DateTime)this.InputG1_03.Value < TimeSpan.FromMinutes(wdjg1))
-                        this.InputG1_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG1_04.Value - (DateTime)this.InputG1_03.Value - TimeSpan.FromMinutes(wdjg1))).TotalMinutes);
-                    else
-                        this.InputG1_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG1_04.Value - (DateTime)this.InputG1_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG1_06.Value = 0;
-
-            }
-            else
-                this.InputG1_06.Value = System.DBNull.Value;
-
-        }
-
-        private void InputG1_03_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG1_03.Value != System.DBNull.Value)
-                this.InputG1_03.Value = this.xiuzhengTime((DateTime)this.InputG1_03.Value);
-            this.InputG5_03.Value = this.InputG3_03.Value = this.InputG1_03.Value;
-
-            if (this.InputG1_02.Value != System.DBNull.Value && this.InputG1_03.Value != System.DBNull.Value && this.InputG1_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG1_04.Value) > ((DateTime)this.InputG1_02.Value) && ((DateTime)this.InputG1_04.Value) - ((DateTime)this.InputG1_03.Value) > TimeSpan.FromMinutes(wdjg1))
-                {
-                    if ((DateTime)this.InputG1_02.Value - (DateTime)this.InputG1_03.Value < TimeSpan.FromMinutes(wdjg1))
-                        this.InputG1_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG1_04.Value - (DateTime)this.InputG1_03.Value - TimeSpan.FromMinutes(wdjg1))).TotalMinutes);
-                    else
-                        this.InputG1_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG1_04.Value - (DateTime)this.InputG1_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG1_06.Value = 0;
-
-            }
-            else
-                this.InputG1_06.Value = System.DBNull.Value;
-        }
+       
 
  
-        private void InputG3_04_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG3_04.Value != System.DBNull.Value)
-                this.InputG3_04.Value = this.xiuzhengTime((DateTime)this.InputG3_04.Value);
-            
-            if (this.InputG3_02.Value != System.DBNull.Value && this.InputG3_03.Value != System.DBNull.Value && this.InputG3_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG3_04.Value) > ((DateTime)this.InputG3_02.Value) && ((DateTime)this.InputG3_04.Value) - ((DateTime)this.InputG3_03.Value) > TimeSpan.FromMinutes(wdjg3))
-                {
-                    if ((DateTime)this.InputG3_02.Value - (DateTime)this.InputG3_03.Value < TimeSpan.FromMinutes(wdjg3))
-                        this.InputG3_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG3_04.Value - (DateTime)this.InputG3_03.Value - TimeSpan.FromMinutes(wdjg3))).TotalMinutes);
-                    else
-                        this.InputG3_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG3_04.Value - (DateTime)this.InputG3_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG3_06.Value = 0;
-
-            }
-            else
-                this.InputG3_06.Value = System.DBNull.Value;
-
-        }
-
-        private void InputG3_03_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG3_03.Value != System.DBNull.Value)
-                this.InputG3_03.Value = this.xiuzhengTime((DateTime)this.InputG3_03.Value);
-            
-            if (this.InputG3_02.Value != System.DBNull.Value && this.InputG3_03.Value != System.DBNull.Value && this.InputG3_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG3_04.Value) > ((DateTime)this.InputG3_02.Value) && ((DateTime)this.InputG3_04.Value) - ((DateTime)this.InputG3_03.Value) > TimeSpan.FromMinutes(wdjg3))
-                {
-                    if ((DateTime)this.InputG3_02.Value - (DateTime)this.InputG3_03.Value < TimeSpan.FromMinutes(wdjg3))
-                        this.InputG3_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG3_04.Value - (DateTime)this.InputG3_03.Value - TimeSpan.FromMinutes(wdjg3))).TotalMinutes);
-                    else
-                        this.InputG3_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG3_04.Value - (DateTime)this.InputG3_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG3_06.Value = 0;
-
-            }
-            else
-                this.InputG3_06.Value = System.DBNull.Value;
-        }
+        
 
   
 
-        private void InputG1_05_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG1_05.Value != System.DBNull.Value)
-                this.InputG1_05.Value = this.xiuzhengTime((DateTime)this.InputG1_05.Value);
-            this.InputG5_05.Value = this.InputG3_05.Value = this.InputG1_05.Value;
-        }
-
-          private void InputG3_05_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG3_05.Value != System.DBNull.Value)
-                this.InputG3_05.Value = this.xiuzhengTime((DateTime)this.InputG3_05.Value);
-            
-        }
-
-        private void InputG5_03_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG5_03.Value != System.DBNull.Value)
-                this.InputG5_03.Value = this.xiuzhengTime((DateTime)this.InputG5_03.Value);
-
-            if (this.InputG5_02.Value != System.DBNull.Value && this.InputG5_03.Value != System.DBNull.Value && this.InputG5_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG5_04.Value) > ((DateTime)this.InputG5_02.Value) && ((DateTime)this.InputG5_04.Value) - ((DateTime)this.InputG5_03.Value) > TimeSpan.FromMinutes(wdjg5))
-                {
-                    if ((DateTime)this.InputG5_02.Value - (DateTime)this.InputG5_03.Value < TimeSpan.FromMinutes(wdjg5))
-                        this.InputG5_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG5_04.Value - (DateTime)this.InputG5_03.Value - TimeSpan.FromMinutes(wdjg5))).TotalMinutes);
-                    else
-                        this.InputG5_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG5_04.Value - (DateTime)this.InputG5_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG5_06.Value = 0;
-
-            }
-            else
-                this.InputG5_06.Value = System.DBNull.Value;
-        }
         
-        private void InputG5_04_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG5_04.Value != System.DBNull.Value)
-                this.InputG5_04.Value = this.xiuzhengTime((DateTime)this.InputG5_04.Value);
+       
 
-            if (this.InputG5_02.Value != System.DBNull.Value && this.InputG5_03.Value != System.DBNull.Value && this.InputG5_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG5_04.Value) > ((DateTime)this.InputG5_02.Value) && ((DateTime)this.InputG5_04.Value) - ((DateTime)this.InputG5_03.Value) > TimeSpan.FromMinutes(wdjg5))
-                {
-                    if ((DateTime)this.InputG5_02.Value - (DateTime)this.InputG5_03.Value < TimeSpan.FromMinutes(wdjg5))
-                        this.InputG5_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG5_04.Value - (DateTime)this.InputG5_03.Value - TimeSpan.FromMinutes(wdjg5))).TotalMinutes);
-                    else
-                        this.InputG5_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG5_04.Value - (DateTime)this.InputG5_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG5_06.Value = 0;
-
-            }
-            else
-                this.InputG5_06.Value = System.DBNull.Value;
-
-        }
-         
-        private void InputG5_05_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG5_05.Value != System.DBNull.Value)
-                this.InputG5_05.Value = this.xiuzhengTime((DateTime)this.InputG5_05.Value);
-        }
-
-        private void InputG6_03_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG6_03.Value != System.DBNull.Value)
-                this.InputG6_03.Value = this.xiuzhengTime((DateTime)this.InputG6_03.Value);
-
-            if (this.InputG6_02.Value != System.DBNull.Value && this.InputG6_03.Value != System.DBNull.Value && this.InputG6_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG6_04.Value) > ((DateTime)this.InputG6_02.Value) && ((DateTime)this.InputG6_04.Value) - ((DateTime)this.InputG6_03.Value) > TimeSpan.FromMinutes(wdjg6))
-                {
-                    if ((DateTime)this.InputG6_02.Value - (DateTime)this.InputG6_03.Value < TimeSpan.FromMinutes(wdjg6))
-                        this.InputG6_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG6_04.Value - (DateTime)this.InputG6_03.Value - TimeSpan.FromMinutes(wdjg6))).TotalMinutes);
-                    else
-                        this.InputG6_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG6_04.Value - (DateTime)this.InputG6_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG6_06.Value = 0;
-
-            }
-            else
-                this.InputG6_06.Value = System.DBNull.Value;
-        }
-
-        private void InputG6_04_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG6_04.Value != System.DBNull.Value)
-                this.InputG6_04.Value = this.xiuzhengTime((DateTime)this.InputG6_04.Value);
-
-            if (this.InputG6_02.Value != System.DBNull.Value && this.InputG6_03.Value != System.DBNull.Value && this.InputG6_04.Value != System.DBNull.Value)
-            {
-                if (((DateTime)this.InputG6_04.Value) > ((DateTime)this.InputG6_02.Value) && ((DateTime)this.InputG6_04.Value) - ((DateTime)this.InputG6_03.Value) > TimeSpan.FromMinutes(wdjg6))
-                {
-                    if ((DateTime)this.InputG6_02.Value - (DateTime)this.InputG6_03.Value < TimeSpan.FromMinutes(wdjg6))
-                        this.InputG6_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG6_04.Value - (DateTime)this.InputG6_03.Value - TimeSpan.FromMinutes(wdjg6))).TotalMinutes);
-                    else
-                        this.InputG6_06.Value = Math.Floor(((TimeSpan)((DateTime)this.InputG6_04.Value - (DateTime)this.InputG6_02.Value)).TotalMinutes);
-                }
-                else
-                    this.InputG6_06.Value = 0;
-
-            }
-            else
-                this.InputG6_06.Value = System.DBNull.Value;
-
-        }
-
-        private void InputG6_05_Validated(object sender, EventArgs e)
-        {
-            if (this.InputG6_05.Value != System.DBNull.Value)
-                this.InputG6_05.Value = this.xiuzhengTime((DateTime)this.InputG6_05.Value);
-        }
 
         private void InputNumber_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1503,109 +1097,7 @@ namespace LTZN.调度
                     }
                     cn.Close();
                     break;
-                case "STLR":
-                    if (System.DateTime.Today >= dateTimePicker1.Value.AddDays(-2))
-                    {
-                        this.oracleConnection1.Open();
-                        this.oraCmdUpdateLUCI.Parameters["RQ"].Value = pDate;
-                        this.oraCmdUpdateLUCI.Parameters["BANCI"].Value = pBanci;
-                        this.oraCmdUpdateLUCI.Parameters["BANLUCI"].Value = pBanluci;
-                        //1高炉
-                        this.oraCmdUpdateLUCI.Parameters["G1DGSJ"].Value = this.InputG1_03.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1DKSJ"].Value = this.InputG1_04.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1TZSJ"].Value = this.InputG1_05.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1WDSJ"].Value = this.InputG1_06.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1QUCHU"].Value = this.InputG1_07.Text;
-                        this.oraCmdUpdateLUCI.Parameters["G1FELIANG"].Value = this.InputG1_08.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FEC"].Value = this.InputG1_09.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FESI"].Value = this.InputG1_10.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FEMN"].Value = this.InputG1_11.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FEP"].Value = this.InputG1_12.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FES"].Value = this.InputG1_13.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FETI"].Value = this.InputG1_14.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHASIO2"].Value = this.InputG1_15.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHACAO"].Value = this.InputG1_16.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHAMGO"].Value = this.InputG1_17.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHAAL2O3"].Value = this.InputG1_18.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHAS"].Value = this.InputG1_19.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHATIO2"].Value = this.InputG1_20.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1ZHAR2"].Value = this.InputG1_21.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FECR"].Value = this.InputG1_22.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G1FENI"].Value = this.InputG1_23.Value;
-                        //3高炉
-                        this.oraCmdUpdateLUCI.Parameters["G3DGSJ"].Value = this.InputG3_03.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3DKSJ"].Value = this.InputG3_04.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3TZSJ"].Value = this.InputG3_05.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3WDSJ"].Value = this.InputG3_06.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3QUCHU"].Value = this.InputG3_07.Text;
-                        this.oraCmdUpdateLUCI.Parameters["G3FELIANG"].Value = this.InputG3_08.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FEC"].Value = this.InputG3_09.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FESI"].Value = this.InputG3_10.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FEMN"].Value = this.InputG3_11.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FEP"].Value = this.InputG3_12.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FES"].Value = this.InputG3_13.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FETI"].Value = this.InputG3_14.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHASIO2"].Value = this.InputG3_15.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHACAO"].Value = this.InputG3_16.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHAMGO"].Value = this.InputG3_17.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHAAL2O3"].Value = this.InputG3_18.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHAS"].Value = this.InputG3_19.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHATIO2"].Value = this.InputG3_20.Value;
-
-                        this.oraCmdUpdateLUCI.Parameters["G3ZHAR2"].Value = this.InputG3_21.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FECR"].Value = this.InputG3_22.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G3FENI"].Value = this.InputG3_23.Value;
-                        //5高炉
-                        this.oraCmdUpdateLUCI.Parameters["G5DGSJ"].Value = this.InputG5_03.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5DKSJ"].Value = this.InputG5_04.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5TZSJ"].Value = this.InputG5_05.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5WDSJ"].Value = this.InputG5_06.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5QUCHU"].Value = this.InputG5_07.Text;
-                        this.oraCmdUpdateLUCI.Parameters["G5FELIANG"].Value = this.InputG5_08.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FEC"].Value = this.InputG5_09.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FESI"].Value = this.InputG5_10.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FEMN"].Value = this.InputG5_11.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FEP"].Value = this.InputG5_12.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FES"].Value = this.InputG5_13.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FETI"].Value = this.InputG5_14.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHASIO2"].Value = this.InputG5_15.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHACAO"].Value = this.InputG5_16.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHAMGO"].Value = this.InputG5_17.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHAAL2O3"].Value = this.InputG5_18.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHAS"].Value = this.InputG5_19.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHATIO2"].Value = this.InputG5_20.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5ZHAR2"].Value = this.InputG5_21.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FECR"].Value = this.InputG5_22.Value;
-                        this.oraCmdUpdateLUCI.Parameters["G5FENI"].Value = this.InputG5_23.Value;
-                        //6高炉
-                     
-                        
-                            this.oraCmdUpdateLUCI.Parameters["G6DGSJ"].Value = this.InputG6_03.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6DKSJ"].Value = this.InputG6_04.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6TZSJ"].Value = this.InputG6_05.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6WDSJ"].Value = this.InputG6_06.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6QUCHU"].Value = this.InputG6_07.Text;
-                            this.oraCmdUpdateLUCI.Parameters["G6FELIANG"].Value = this.InputG6_08.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FEC"].Value = this.InputG6_09.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FESI"].Value = this.InputG6_10.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FEMN"].Value = this.InputG6_11.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FEP"].Value = this.InputG6_12.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FES"].Value = this.InputG6_13.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FETI"].Value = this.InputG6_14.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHASIO2"].Value = this.InputG6_15.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHACAO"].Value = this.InputG6_16.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHAMGO"].Value = this.InputG6_17.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHAAL2O3"].Value = this.InputG6_18.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHAS"].Value = this.InputG6_19.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHATIO2"].Value = this.InputG6_20.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6ZHAR2"].Value = this.InputG6_21.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FECR"].Value = this.InputG6_22.Value;
-                            this.oraCmdUpdateLUCI.Parameters["G6FENI"].Value = this.InputG6_23.Value;
-                        
-                        this.oraCmdUpdateLUCI.ExecuteNonQuery();
-                        this.oracleConnection1.Close();
-                    }
-                    break;
+               
                 case "YLXH":
                     if (button1.Enabled)
                     {
@@ -1958,421 +1450,11 @@ namespace LTZN.调度
             tabControl1_TabIndexChanged(null, null);
         }
 
-        private void InputCHUTE2_ValueChanged(object sender, EventArgs e)
-        {
-                if (!更新) return;
-                if (InputCHUTE2.Value == pBanluci) return;
-                if (自动保存 && 更改 )
-                {
-                    buttonSave_Click(null, null);
-                }
-                else
-                {
-                    if (提示保存 && 更改)
-                    {
-                        DialogResult dr = MessageBox.Show("数据已修改是否保存？", "提示", MessageBoxButtons.YesNoCancel);
-                        if (dr == DialogResult.Cancel)
-                        {
-                            InputCHUTE2.Value = pBanluci;
-                            return;
-                        }
-                        if (dr == DialogResult.Yes)
-                            buttonSave_Click(null, null);
-                    }
-                }
-                tabControl1_TabIndexChanged(null, null);
-        }
+      
 
-        private void ButtonChuFeUP_Click(object sender, EventArgs e)
-        {
-            if (自动保存 && 更改)
-            {
-                buttonSave_Click(null, null);
-            }
-            else
-            {
-                if (提示保存 && 更改)
-                {
-                    DialogResult dr = MessageBox.Show("数据已修改是否保存？", "提示", MessageBoxButtons.YesNoCancel);
-                    if (dr == DialogResult.Cancel)
-                        return;
-                    if (dr == DialogResult.Yes)
-                        buttonSave_Click(null, null);
-                }
-            }
-            this.Cursor = Cursors.WaitCursor;
-            更新 = false;
-            System.DateTime d = DateTime.Today;
-            string banci = "";
-            int banluci;
-
-            d = this.dateTimePicker1.Value.Date;
-            banci = this.InputCHUTE1.Text;
-            banluci = Convert.ToInt32(this.InputCHUTE2.Value) - 1;
-            DateTime zhuan = new DateTime(2009, 05, 15);
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            OracleConnection cn = new OracleConnection();
-            cn.ConnectionString = Properties.Settings.Default.ltznConnectionString;
-            cn.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = cn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT gaolu,yeban,baiban,zhongban,riqi FROM lucixiugai where gaolu=6 order by riqi desc";
-            OracleDataReader dr1 = cmd.ExecuteReader();
-            DateTime dt = new DateTime(2020, 11, 2);
-            int yeban = 0;
-            int baiban = 0;
-            int zhongban = 0;
-
-            while (dr1.Read())
-            {
-                if (this.dateTimePicker1.Value.Date >= dr1.GetDateTime(4))
-                {
-                    dt = dr1.GetDateTime(4);
-                    yeban = dr1.GetInt32(1);
-                    baiban = dr1.GetInt32(2);
-                    zhongban = dr1.GetInt32(3);
-                    break;
-                }
-            }
-
-            dr1.Close();
-            cn.Close();
-
-            if (this.dateTimePicker1.Value.Date >= dt)
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value < 2)
-                {
-
-                    banluci = zhongban;
-                  
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date.Subtract(TimeSpan.FromDays(1));
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value < 2)
-                {
-                    banluci = yeban;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value < 2)
-                {
-                    banluci = baiban;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-            }
-            else
-            {
-                if (this.InputCHUTE2.Value < 2)
-                {
-                    banluci = 6;
-                    if (this.InputCHUTE1.Text == "夜班")
-                    {
-                        banci = "中班";
-                        d = this.dateTimePicker1.Value.Date.Subtract(TimeSpan.FromDays(1));
-                    }
-                    if (this.InputCHUTE1.Text == "白班")
-                    {
-                        banci = "夜班";
-                        d = this.dateTimePicker1.Value.Date;
-                    }
-                    if (this.InputCHUTE1.Text == "中班")
-                    {
-                        banci = "白班";
-                        d = this.dateTimePicker1.Value.Date;
-                    }
-                }
-
-            }
-
-            this.dateTimePicker1.Value = d;
-            this.InputCHUTE1.Text = banci;
-            this.InputCHUTE2.Value = banluci;
-            更新 = true;
-            tabControl1_TabIndexChanged(null, null);
-            this.Cursor = Cursors.Default;
-        }
-        /// <summary>
-        /// buttonSave_Click先保存数据 NEWUPDATELUCI，再查询NEWSELECTLUCI
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChuFeDown_Click(object sender, EventArgs e)
-        {
-            if (自动保存 && 更改 && (System.DateTime.Today >= dateTimePicker1.Value.AddDays(-2)))
-            {
-                buttonSave_Click(null, null);
-            }
-            else
-            {
-                if (提示保存 && 更改)
-                {
-                    DialogResult dr = MessageBox.Show("数据已修改是否保存？", "提示", MessageBoxButtons.YesNoCancel);
-                    if (dr == DialogResult.Cancel)
-                        return;
-                    if (dr == DialogResult.Yes)
-                        buttonSave_Click(null, null);
-                }
-            }
-            this.Cursor = Cursors.WaitCursor;
-            更新 = false;
-            System.DateTime d = DateTime.Today;
-            string banci = "";
-            int banluci;
-            DateTime zhuan = new DateTime(2009, 05, 15);
-
-            d = this.dateTimePicker1.Value.Date;
-            banci = this.InputCHUTE1.Text;
-            banluci = Convert.ToInt32(this.InputCHUTE2.Value) + 1;
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            OracleConnection cn = new OracleConnection();
-            cn.ConnectionString = Properties.Settings.Default.ltznConnectionString;
-            cn.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = cn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT gaolu,yeban,baiban,zhongban,riqi FROM lucixiugai where gaolu=6 order by riqi desc";
-            OracleDataReader dr1 = cmd.ExecuteReader();
-            DateTime dt = new DateTime(2020, 11, 2);
-            int yeban = 0;
-            int baiban = 0;
-            int zhongban = 0;
-
-            while (dr1.Read())
-            {
-                if (this.dateTimePicker1.Value.Date >= dr1.GetDateTime(4))
-                {
-                    dt = dr1.GetDateTime(4);
-                    yeban = dr1.GetInt32(1);
-                    baiban = dr1.GetInt32(2);
-                    zhongban = dr1.GetInt32(3);
-                    break;
-                }
-            }
-
-            dr1.Close();
-            cn.Close();
-
-
-
-            if (this.dateTimePicker1.Value.Date >= dt)
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= yeban)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= baiban)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= zhongban)//20151020
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-            else if (this.dateTimePicker1.Value.Date >= new DateTime(2016, 11, 2))
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 4)//20151020
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-            else if (this.dateTimePicker1.Value.Date >= new DateTime(2016, 10, 1))
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 5)//20151020
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-            else if (this.dateTimePicker1.Value.Date >= new DateTime(2016, 4, 3))
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 5)//20151020
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-            else if (this.dateTimePicker1.Value.Date >= new DateTime(2014, 11, 30))
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-            else if (this.dateTimePicker1.Value.Date >= zhuan)
-            {
-                if (this.InputCHUTE1.Text == "夜班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "白班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "白班" && this.InputCHUTE2.Value >= 6)
-                {
-                    banluci = 1;
-                    banci = "中班";
-                    d = this.dateTimePicker1.Value.Date;
-                }
-                if (this.InputCHUTE1.Text == "中班" && this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    banci = "夜班";
-                    d = this.dateTimePicker1.Value.Date.AddDays(1);
-                }
-            }
-            else
-            {
-                if (this.InputCHUTE2.Value >= 5)
-                {
-                    banluci = 1;
-                    if (this.InputCHUTE1.Text == "夜班")
-                    {
-                        banci = "白班";
-                        d = this.dateTimePicker1.Value.Date;
-                    }
-                    if (this.InputCHUTE1.Text == "白班")
-                    {
-                        banci = "中班";
-                        d = this.dateTimePicker1.Value.Date;
-                    }
-                    if (this.InputCHUTE1.Text == "中班")
-                    {
-                        banci = "夜班";
-                        d = this.dateTimePicker1.Value.Date.AddDays(1);
-
-                    }
-                }
-            }
-            this.dateTimePicker1.Value = d;
-            this.InputCHUTE1.Text = banci;
-            this.InputCHUTE2.Value = banluci;
-            更新 = true;
-            tabControl1_TabIndexChanged(null, null);
-            this.Cursor = Cursors.Default;
-        }
-
-        private void InputCHUTE1_TextChanged(object sender, EventArgs e)
-        {
-            if (!更新) return;
-            if (InputCHUTE1.Text == pBanci) return;
-            if (自动保存 && 更改)
-            {
-                buttonSave_Click(null, null);
-            }
-            else
-            {
-                if (提示保存 && 更改)
-                {
-                    DialogResult dr = MessageBox.Show("数据已修改是否保存？", "提示", MessageBoxButtons.YesNoCancel);
-                    if (dr == DialogResult.Cancel)
-                    {
-                        InputCHUTE1.Text = pBanci;
-                        return;
-                    }
-                    if (dr == DialogResult.Yes && (System.DateTime.Today>=dateTimePicker1.Value.AddDays(-2)))
-                        buttonSave_Click(null, null);
-                }
-            }
-            tabControl1_TabIndexChanged(null, null);
-        }
-
-        //最后记录
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            更新 = false;
-            try
-            {
-                OracleConnection cn = new OracleConnection();
-                cn.ConnectionString = Properties.Settings.Default.ltznConnectionString;
-                cn.Open();
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "select trunc(zdsj) as rq,banci,banluci from (select zdsj,banci,banluci from ddluci where dksj is not null order by zdsj desc) where rownum=1";
-                OracleDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    this.dateTimePicker1.Value = dr.GetDateTime(0);
-                    this.InputCHUTE1.Text = dr.GetString(1);
-                    this.InputCHUTE2.Value = dr.GetDecimal(2);
-                }
-                
-                dr.Close();
-                cn.Close();
-            }
-            catch {}
-            更新 = true;
-            tabControl1_TabIndexChanged(null, null);
-            this.Cursor = Cursors.Default;
-        }
+       
+     
+      
 
         private void c1FlexGrid9_AfterAddRow(object sender, RowColEventArgs e)
         {

@@ -96,6 +96,7 @@
             this.出铁方案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出铁计划ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.料线探齿ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.生产计划ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.生产指导ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.发送信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.未处理消息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,9 +108,13 @@
             this.关于AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新内容ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.生产计划ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superTabControl1 = new Skin.Bars.SuperTabControl();
+            this.superTabControlPanel1 = new Skin.Bars.SuperTabControlPanel();
+            this.superTabItem1 = new Skin.Bars.SuperTabItem();
             this.statusStrip.SuspendLayout();
             this.主菜单.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
+            this.superTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -120,7 +125,7 @@
             this.tsMsg});
             this.statusStrip.Location = new System.Drawing.Point(0, 396);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(766, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -158,7 +163,7 @@
             this.toolStripMenuItem1});
             this.主菜单.Location = new System.Drawing.Point(0, 0);
             this.主菜单.Name = "主菜单";
-            this.主菜单.Size = new System.Drawing.Size(632, 25);
+            this.主菜单.Size = new System.Drawing.Size(766, 25);
             this.主菜单.TabIndex = 4;
             this.主菜单.Text = "menuStrip1";
             // 
@@ -626,7 +631,7 @@
             // 
             this.用户管理ToolStripMenuItem.Enabled = false;
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
             // 
@@ -634,7 +639,7 @@
             // 
             this.btnModelManager.Enabled = false;
             this.btnModelManager.Name = "btnModelManager";
-            this.btnModelManager.Size = new System.Drawing.Size(180, 22);
+            this.btnModelManager.Size = new System.Drawing.Size(148, 22);
             this.btnModelManager.Text = "计算模型";
             this.btnModelManager.Click += new System.EventHandler(this.计算模型ToolStripMenuItem_Click);
             // 
@@ -644,7 +649,7 @@
             this.出铁方案ToolStripMenuItem,
             this.出铁计划ToolStripMenuItem});
             this.铁次管理ToolStripMenuItem.Name = "铁次管理ToolStripMenuItem";
-            this.铁次管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.铁次管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.铁次管理ToolStripMenuItem.Text = "铁次管理";
             this.铁次管理ToolStripMenuItem.Click += new System.EventHandler(this.铁次管理ToolStripMenuItem_Click);
             // 
@@ -665,9 +670,17 @@
             // 料线探齿ToolStripMenuItem
             // 
             this.料线探齿ToolStripMenuItem.Name = "料线探齿ToolStripMenuItem";
-            this.料线探齿ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.料线探齿ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.料线探齿ToolStripMenuItem.Text = "料线探齿设置";
             this.料线探齿ToolStripMenuItem.Click += new System.EventHandler(this.料线探齿ToolStripMenuItem_Click);
+            // 
+            // 生产计划ToolStripMenuItem
+            // 
+            this.生产计划ToolStripMenuItem.Enabled = false;
+            this.生产计划ToolStripMenuItem.Name = "生产计划ToolStripMenuItem";
+            this.生产计划ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.生产计划ToolStripMenuItem.Text = "生产计划";
+            this.生产计划ToolStripMenuItem.Click += new System.EventHandler(this.生产计划ToolStripMenuItem_Click);
             // 
             // 生产指导ToolStripMenuItem
             // 
@@ -747,18 +760,60 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 21);
             // 
-            // 生产计划ToolStripMenuItem
+            // superTabControl1
             // 
-            this.生产计划ToolStripMenuItem.Name = "生产计划ToolStripMenuItem";
-            this.生产计划ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.生产计划ToolStripMenuItem.Text = "生产计划";
-            this.生产计划ToolStripMenuItem.Click += new System.EventHandler(this.生产计划ToolStripMenuItem_Click);
+            this.superTabControl1.CloseButtonOnTabsVisible = true;
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.superTabControl1.ControlBox.CloseBox.Name = "";
+            // 
+            // 
+            // 
+            this.superTabControl1.ControlBox.MenuBox.Name = "";
+            this.superTabControl1.ControlBox.Name = "";
+            this.superTabControl1.ControlBox.SubItems.AddRange(new Skin.Bars.BaseItem[] {
+            this.superTabControl1.ControlBox.MenuBox,
+            this.superTabControl1.ControlBox.CloseBox});
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControl1.Location = new System.Drawing.Point(0, 25);
+            this.superTabControl1.Name = "superTabControl1";
+            this.superTabControl1.ReorderTabsEnabled = true;
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabIndex = 0;
+            this.superTabControl1.Size = new System.Drawing.Size(766, 371);
+            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabIndex = 6;
+            this.superTabControl1.Tabs.AddRange(new Skin.Bars.BaseItem[] {
+            this.superTabItem1});
+            this.superTabControl1.Text = "superTabControl1";
+            // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(766, 341);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "superTabItem1";
             // 
             // 炼铁智能主窗体
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 418);
+            this.ClientSize = new System.Drawing.Size(766, 418);
+            this.Controls.Add(this.superTabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.主菜单);
             this.IsMdiContainer = true;
@@ -772,6 +827,8 @@
             this.statusStrip.PerformLayout();
             this.主菜单.ResumeLayout(false);
             this.主菜单.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
+            this.superTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -858,6 +915,9 @@
         private System.Windows.Forms.ToolStripMenuItem 燃料比趋势ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 生产计划ToolStripMenuItem;
+        private Skin.Bars.SuperTabControl superTabControl1;
+        private Skin.Bars.SuperTabControlPanel superTabControlPanel1;
+        private Skin.Bars.SuperTabItem superTabItem1;
     }
 }
 
