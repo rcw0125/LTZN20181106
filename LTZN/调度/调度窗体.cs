@@ -11,6 +11,7 @@ using C1.Win.C1Input;
 using System.Security.Principal;
 using Rcw.Method;
 using Rcw.Data;
+using System.Linq;
 
 namespace LTZN.调度
 {
@@ -2529,14 +2530,15 @@ namespace LTZN.调度
                             }
                         }
                         double wdjg = 50;
-                        foreach (var wd in wdjgList)
-                        {
-                            if (item.GAOLU == wd.GAOLU)
-                            {
-                                wdjg = wd.wdsj;
-                                break;
-                            }
-                        }
+                        wdjg = wdjgList.FirstOrDefault(o => o.GAOLU == item.GAOLU).wdsj;
+                        //foreach (var wd in wdjgList)
+                        //{
+                        //    if (item.GAOLU == wd.GAOLU)
+                        //    {
+                        //        wdjg = wd.wdsj;
+                        //        break;
+                        //    }
+                        //}
                         
                         //出铁时间 大于整点时间
                         if ((item.dksj > item.zdsj) && item.dksj - item.dgsj > TimeSpan.FromMinutes(wdjg))
