@@ -14,7 +14,8 @@ namespace LTZN
         [STAThread]
         static void Main()
         {
-            DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.204", "orcl", "LF", "LF");
+            //DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.204", "orcl", "LF", "LF");
+            DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.3", "xgmes", "LF", "LF");
             DbContext.DefaultDataSourceName = "ltzn";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
