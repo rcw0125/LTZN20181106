@@ -85,7 +85,6 @@
             this.colzhar2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaveEnable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.MFFX = new System.Windows.Forms.TabPage();
@@ -604,7 +603,7 @@
             this.tpst.Padding = new System.Windows.Forms.Padding(3);
             this.tpst.Size = new System.Drawing.Size(1012, 449);
             this.tpst.TabIndex = 12;
-            this.tpst.Text = "生铁";
+            this.tpst.Text = "生铁录入";
             this.tpst.UseVisualStyleBackColor = true;
             // 
             // gridControl_ddluci
@@ -921,31 +920,19 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton3);
-            this.flowLayoutPanel1.Controls.Add(this.btnUpdate_PlanOrder);
             this.flowLayoutPanel1.Controls.Add(this.btnDelete_PlanOrder);
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdate_PlanOrder);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1006, 43);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.ImageUri.Uri = "Zoom;Size16x16";
-            this.simpleButton3.Location = new System.Drawing.Point(30, 8);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(30, 8, 3, 3);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 4;
-            this.simpleButton3.Text = "查询";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
             // btnUpdate_PlanOrder
             // 
             this.btnUpdate_PlanOrder.Enabled = false;
             this.btnUpdate_PlanOrder.ImageOptions.ImageUri.Uri = "Edit;Size16x16";
-            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(358, 8);
+            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(330, 8);
             this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(250, 8, 3, 3);
             this.btnUpdate_PlanOrder.Name = "btnUpdate_PlanOrder";
             this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(75, 23);
@@ -957,8 +944,8 @@
             // 
             this.btnDelete_PlanOrder.Enabled = false;
             this.btnDelete_PlanOrder.ImageOptions.ImageUri.Uri = "Cancel;Size16x16";
-            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(676, 8);
-            this.btnDelete_PlanOrder.Margin = new System.Windows.Forms.Padding(240, 8, 3, 3);
+            this.btnDelete_PlanOrder.Location = new System.Drawing.Point(2, 8);
+            this.btnDelete_PlanOrder.Margin = new System.Windows.Forms.Padding(2, 8, 3, 3);
             this.btnDelete_PlanOrder.Name = "btnDelete_PlanOrder";
             this.btnDelete_PlanOrder.Size = new System.Drawing.Size(75, 23);
             this.btnDelete_PlanOrder.TabIndex = 5;
@@ -3795,7 +3782,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colzhatio2;
         private DevExpress.XtraGrid.Columns.GridColumn colzhar2;
         private DevExpress.XtraGrid.Columns.GridColumn colSaveEnable;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_dgsj;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_zdsj;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_tzsj;

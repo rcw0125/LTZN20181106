@@ -92,6 +92,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WinForms.DLL</HintPath>
@@ -628,6 +632,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DLL\AppUpdate.exe.config" />
+    <None Include="DLL\AutoUpdate.config" />
     <None Include="Properties\DataSources\ddluci.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1350,6 +1356,7 @@
     <None Include="Resources\技术日报.txt" />
     <None Include="Resources\技术日报1.txt" />
     <None Include="Resources\技术日报11.txt" />
+    <Content Include="DLL\AppUpdate.exe" />
     <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
     <Content Include="DLL\Rcw.Method.dll" />
     <Content Include="DLL\Skin.Bars.dll" />

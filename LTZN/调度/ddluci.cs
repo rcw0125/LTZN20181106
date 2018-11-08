@@ -527,6 +527,24 @@ namespace LTZN
             }
         }
 
+        private double _liaopi;
+        [DisplayName("料批")]
+        public double liaopi
+        {
+            get
+            {
+                return _liaopi;
+            }
+            set
+            {
+                if (_liaopi != value)
+                {
+                    _liaopi = value;
+                    RaisePropertyChanged("liaopi", true);
+                }
+            }
+        }
+
         /// <summary>
         /// 获取数据列表
         /// </summary>

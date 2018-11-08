@@ -113,6 +113,7 @@ namespace LTZN.调度
             textBoxJSB.BackColor = Color.LightYellow;
 
             LtznUserManager.instance.RegisterHandler(this, instance_UserChanged);
+            loadDdLuCi();
         }
 
         private void 调度窗体_Load(object sender, EventArgs e)
@@ -769,61 +770,6 @@ namespace LTZN.调度
         }
 
       
-
-        //删除时间
-        //private void InputDateTime_Del(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyValue == 46)
-        //    {
-        //        ((C1DateEdit)sender).Value = System.DBNull.Value;
-        //        return;
-        //    }
-        //    if (e.KeyCode == Keys.Enter)
-        //    {
-        //        switch (((C1DateEdit)sender).Name)
-        //        {
-        //            case "InputG1_04":
-        //                InputG3_04.Focus();
-        //                break;
-        //            case "InputG3_04":
-        //                InputG5_04.Focus();
-        //                break;
-        //            case "InputG5_04":
-        //                InputG6_04.Focus();
-        //                break;
-        //        }
-        //    }
-
-        //}
-
-        //碱度计算
-        private void InputG1R2(object sender, System.EventArgs e)
-        {
-
-            //if (InputG1_15.Value == System.DBNull.Value || InputG1_16.Value == System.DBNull.Value || (decimal)InputG1_15.Value==0)
-            //    {
-            //        InputG1_21.Value = System.DBNull.Value;
-            //        return;
-            //    }
-            //    InputG1_21.Value = ((decimal)InputG1_16.Value) / ((decimal)InputG1_15.Value);
-
-        }
-
-     
-
-
-       
-
-
-       
-
- 
-        
-
-  
-
-        
-       
 
 
         private void InputNumber_KeyDown(object sender, KeyEventArgs e)
@@ -1518,13 +1464,7 @@ namespace LTZN.调度
                     return;
                 }
 
-                //var datalist = PlanOrder.GetSelectedRows(gridView_PlanOrder);
-                //if (datalist.Count == 0)
-                //{
-                //    MessageBox.Show("没有选择计划！");
-                //    return;
-                //}
-
+       
                 List<ddluci> planLuciList = new List<ddluci>();
 
                 foreach (var item in PlanOrderList)
@@ -1533,10 +1473,10 @@ namespace LTZN.调度
                     luci.GAOLU = item.GAOLU.Substring(0, 1);
                     luci.luci = item.LUHAO;
                     luci.zdsj = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd ") + item.ZDSJ + ":00");
-                    luci.kksj = dateTimePicker1.Value;
-                    luci.dksj = dateTimePicker1.Value;
-                    luci.dgsj = dateTimePicker1.Value;
-                    luci.tzsj = dateTimePicker1.Value;
+                    luci.kksj = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd ")  + "00:00:00");
+                    luci.dksj = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd ") + "00:00:00");
+                    luci.dgsj = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd ") + "00:00:00");
+                    luci.tzsj = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd ") + "00:00:00");
                     luci.BANCI = item.BANCI;
                     luci.quchu = "炼钢";
                     luci.BANLUCI = item.BANLUCI;
@@ -1568,6 +1508,16 @@ namespace LTZN.调度
             {
                 luciList = ddluci.GetList("to_char(zdsj,'yyyy-MM-dd')='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'  order by gaolu,zdsj");
                 gridControl_ddluci.DataSource = luciList;
+
+                //计算碱度R2
+                foreach (var item in luciList)
+                {
+                    if (item.zhacao != 0 && item.zhasio2 != 0 && item.zhar2 == 0)
+                    {
+                        item.zhar2 = item.zhacao / item.zhasio2;
+                        item.Save();
+                    }
+                }
                 gridView_ddluci.RefreshData();
                 gridView_ddluci.BestFitColumns();
 
@@ -1578,6 +1528,8 @@ namespace LTZN.调度
             }
         }
 
+
+
         List<wdjg> wdjgList = null;
         private void btnUpdate_PlanOrder_Click(object sender, EventArgs e)
         {
@@ -1585,7 +1537,7 @@ namespace LTZN.调度
             {
                 wdjgList = wdjg.GetList();
             }
-            //修改时间节点 并计算晚点时间
+            //修改时间节点 并计算晚点时间  计算料批
             foreach (var item in luciList)
             {
                 if (item.DataState == DataRowState.Modified)
@@ -1613,15 +1565,7 @@ namespace LTZN.调度
                         }
                         double wdjg = 50;
                         wdjg = wdjgList.FirstOrDefault(o => o.GAOLU == item.GAOLU).wdsj;
-                        //foreach (var wd in wdjgList)
-                        //{
-                        //    if (item.GAOLU == wd.GAOLU)
-                        //    {
-                        //        wdjg = wd.wdsj;
-                        //        break;
-                        //    }
-                        //}
-                        
+                                           
                         //出铁时间 大于整点时间
                         if ((item.dksj > item.zdsj) && item.dksj - item.dgsj > TimeSpan.FromMinutes(wdjg))
                         {
@@ -1639,7 +1583,21 @@ namespace LTZN.调度
                         {
                             item.wdsj = 0;
                         }
+                        try
+                        {
+                            //计算料批
+                            string strSql = "select count(distinct pishu)  from lt_liao where  t>(select dksj from ddluci where luci='"+(Convert.ToInt32(item.luci)-1).ToString()+"') and t<=(select dksj from ddluci where luci='"+item.luci+"');";
+                            var obj = DbContext.ExecuteScalar(strSql);
+                            item.liaopi = Convert.ToDouble(obj);
+                        }
+                        catch
+                        {
+
+                        }
+                       
                     }
+
+
                 }
                
             }

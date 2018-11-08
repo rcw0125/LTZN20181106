@@ -248,8 +248,6 @@
             this.gridColumnluhao.FieldName = "LUHAO";
             this.gridColumnluhao.Name = "gridColumnluhao";
             this.gridColumnluhao.OptionsColumn.AllowEdit = false;
-            this.gridColumnluhao.Visible = true;
-            this.gridColumnluhao.VisibleIndex = 5;
             // 
             // PlanOrderFrm
             // 

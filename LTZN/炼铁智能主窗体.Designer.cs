@@ -794,6 +794,7 @@
             // 
             // superTabControlPanel1
             // 
+            this.superTabControlPanel1.BackgroundImage = global::LTZN.Properties.Resources.调度;
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
@@ -806,7 +807,7 @@
             this.superTabItem1.AttachedControl = this.superTabControlPanel1;
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "superTabItem1";
+            this.superTabItem1.Text = "欢迎使用";
             // 
             // 炼铁智能主窗体
             // 
