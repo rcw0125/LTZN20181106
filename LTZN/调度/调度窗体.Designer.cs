@@ -85,8 +85,8 @@
             this.colzhar2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaveEnable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnUpdate_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.MFFX = new System.Windows.Forms.TabPage();
             this.c1FlexGrid1 = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.调度数据集1 = new LTZN.调度.调度数据集();
@@ -610,6 +610,7 @@
             // 
             this.gridControl_ddluci.DataSource = this.ddluciBindingSource;
             this.gridControl_ddluci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_ddluci.Font = new System.Drawing.Font("宋体", 14.25F);
             this.gridControl_ddluci.Location = new System.Drawing.Point(3, 46);
             this.gridControl_ddluci.MainView = this.gridView_ddluci;
             this.gridControl_ddluci.Name = "gridControl_ddluci";
@@ -630,6 +631,10 @@
             // 
             // gridView_ddluci
             // 
+            this.gridView_ddluci.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridView_ddluci.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView_ddluci.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.gridView_ddluci.Appearance.Row.Options.UseFont = true;
             this.gridView_ddluci.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colC_ID,
             this.colluci,
@@ -659,6 +664,7 @@
             this.colSaveEnable});
             this.gridView_ddluci.GridControl = this.gridControl_ddluci;
             this.gridView_ddluci.Name = "gridView_ddluci";
+            this.gridView_ddluci.OptionsView.ColumnAutoWidth = false;
             this.gridView_ddluci.OptionsView.ShowGroupPanel = false;
             this.gridView_ddluci.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView_ddluci_RowCellStyle);
             // 
@@ -669,20 +675,26 @@
             // 
             // colluci
             // 
+            this.colluci.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.colluci.AppearanceCell.Options.UseFont = true;
             this.colluci.FieldName = "luci";
             this.colluci.Name = "colluci";
             this.colluci.OptionsColumn.AllowEdit = false;
             this.colluci.Visible = true;
             this.colluci.VisibleIndex = 0;
+            this.colluci.Width = 78;
             // 
             // colzdsj
             // 
+            this.colzdsj.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.colzdsj.AppearanceCell.Options.UseFont = true;
             this.colzdsj.ColumnEdit = this.repositoryItemTimeEdit_zdsj;
             this.colzdsj.FieldName = "zdsj";
             this.colzdsj.Name = "colzdsj";
             this.colzdsj.OptionsColumn.AllowEdit = false;
             this.colzdsj.Visible = true;
             this.colzdsj.VisibleIndex = 1;
+            this.colzdsj.Width = 71;
             // 
             // repositoryItemTimeEdit_zdsj
             // 
@@ -698,11 +710,14 @@
             // 
             // coldgsj
             // 
+            this.coldgsj.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.coldgsj.AppearanceCell.Options.UseFont = true;
             this.coldgsj.ColumnEdit = this.repositoryItemTimeEdit_dgsj;
             this.coldgsj.FieldName = "dgsj";
             this.coldgsj.Name = "coldgsj";
             this.coldgsj.Visible = true;
             this.coldgsj.VisibleIndex = 2;
+            this.coldgsj.Width = 73;
             // 
             // repositoryItemTimeEdit_dgsj
             // 
@@ -723,6 +738,8 @@
             // 
             // coldksj
             // 
+            this.coldksj.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.coldksj.AppearanceCell.Options.UseFont = true;
             this.coldksj.ColumnEdit = this.repositoryItemTimeEdit_dksj;
             this.coldksj.FieldName = "dksj";
             this.coldksj.Name = "coldksj";
@@ -743,11 +760,14 @@
             // 
             // coltzsj
             // 
+            this.coltzsj.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.coltzsj.AppearanceCell.Options.UseFont = true;
             this.coltzsj.ColumnEdit = this.repositoryItemTimeEdit_tzsj;
             this.coltzsj.FieldName = "tzsj";
             this.coltzsj.Name = "coltzsj";
             this.coltzsj.Visible = true;
             this.coltzsj.VisibleIndex = 3;
+            this.coltzsj.Width = 73;
             // 
             // repositoryItemTimeEdit_tzsj
             // 
@@ -765,16 +785,21 @@
             // 
             this.colwdsj.FieldName = "wdsj";
             this.colwdsj.Name = "colwdsj";
+            this.colwdsj.OptionsColumn.AllowEdit = false;
             this.colwdsj.Visible = true;
-            this.colwdsj.VisibleIndex = 5;
+            this.colwdsj.VisibleIndex = 6;
+            this.colwdsj.Width = 65;
             // 
             // colquchu
             // 
+            this.colquchu.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.colquchu.AppearanceCell.Options.UseFont = true;
             this.colquchu.ColumnEdit = this.repositoryItemComboBox2;
             this.colquchu.FieldName = "quchu";
             this.colquchu.Name = "colquchu";
             this.colquchu.Visible = true;
-            this.colquchu.VisibleIndex = 6;
+            this.colquchu.VisibleIndex = 7;
+            this.colquchu.Width = 79;
             // 
             // repositoryItemComboBox2
             // 
@@ -788,10 +813,13 @@
             // 
             // colfeliang
             // 
+            this.colfeliang.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.colfeliang.AppearanceCell.Options.UseFont = true;
             this.colfeliang.FieldName = "feliang";
             this.colfeliang.Name = "colfeliang";
             this.colfeliang.Visible = true;
-            this.colfeliang.VisibleIndex = 7;
+            this.colfeliang.VisibleIndex = 5;
+            this.colfeliang.Width = 60;
             // 
             // colfec
             // 
@@ -800,6 +828,7 @@
             this.colfec.OptionsColumn.AllowEdit = false;
             this.colfec.Visible = true;
             this.colfec.VisibleIndex = 8;
+            this.colfec.Width = 37;
             // 
             // colfesi
             // 
@@ -808,6 +837,7 @@
             this.colfesi.OptionsColumn.AllowEdit = false;
             this.colfesi.Visible = true;
             this.colfesi.VisibleIndex = 9;
+            this.colfesi.Width = 37;
             // 
             // colfemn
             // 
@@ -816,6 +846,7 @@
             this.colfemn.OptionsColumn.AllowEdit = false;
             this.colfemn.Visible = true;
             this.colfemn.VisibleIndex = 10;
+            this.colfemn.Width = 37;
             // 
             // colfep
             // 
@@ -824,6 +855,7 @@
             this.colfep.OptionsColumn.AllowEdit = false;
             this.colfep.Visible = true;
             this.colfep.VisibleIndex = 11;
+            this.colfep.Width = 37;
             // 
             // colfes
             // 
@@ -832,6 +864,7 @@
             this.colfes.OptionsColumn.AllowEdit = false;
             this.colfes.Visible = true;
             this.colfes.VisibleIndex = 12;
+            this.colfes.Width = 37;
             // 
             // colfeti
             // 
@@ -840,6 +873,7 @@
             this.colfeti.OptionsColumn.AllowEdit = false;
             this.colfeti.Visible = true;
             this.colfeti.VisibleIndex = 13;
+            this.colfeti.Width = 37;
             // 
             // colfecr
             // 
@@ -848,6 +882,7 @@
             this.colfecr.OptionsColumn.AllowEdit = false;
             this.colfecr.Visible = true;
             this.colfecr.VisibleIndex = 14;
+            this.colfecr.Width = 37;
             // 
             // colfeni
             // 
@@ -856,6 +891,7 @@
             this.colfeni.OptionsColumn.AllowEdit = false;
             this.colfeni.Visible = true;
             this.colfeni.VisibleIndex = 15;
+            this.colfeni.Width = 37;
             // 
             // colzhasio2
             // 
@@ -864,6 +900,7 @@
             this.colzhasio2.OptionsColumn.AllowEdit = false;
             this.colzhasio2.Visible = true;
             this.colzhasio2.VisibleIndex = 16;
+            this.colzhasio2.Width = 37;
             // 
             // colzhacao
             // 
@@ -872,6 +909,7 @@
             this.colzhacao.OptionsColumn.AllowEdit = false;
             this.colzhacao.Visible = true;
             this.colzhacao.VisibleIndex = 17;
+            this.colzhacao.Width = 37;
             // 
             // colzhamgo
             // 
@@ -880,6 +918,7 @@
             this.colzhamgo.OptionsColumn.AllowEdit = false;
             this.colzhamgo.Visible = true;
             this.colzhamgo.VisibleIndex = 18;
+            this.colzhamgo.Width = 37;
             // 
             // colzhaal2o3
             // 
@@ -888,6 +927,7 @@
             this.colzhaal2o3.OptionsColumn.AllowEdit = false;
             this.colzhaal2o3.Visible = true;
             this.colzhaal2o3.VisibleIndex = 19;
+            this.colzhaal2o3.Width = 37;
             // 
             // colzhas
             // 
@@ -896,6 +936,7 @@
             this.colzhas.OptionsColumn.AllowEdit = false;
             this.colzhas.Visible = true;
             this.colzhas.VisibleIndex = 20;
+            this.colzhas.Width = 37;
             // 
             // colzhatio2
             // 
@@ -904,6 +945,7 @@
             this.colzhatio2.OptionsColumn.AllowEdit = false;
             this.colzhatio2.Visible = true;
             this.colzhatio2.VisibleIndex = 21;
+            this.colzhatio2.Width = 37;
             // 
             // colzhar2
             // 
@@ -912,6 +954,7 @@
             this.colzhar2.OptionsColumn.AllowEdit = false;
             this.colzhar2.Visible = true;
             this.colzhar2.VisibleIndex = 22;
+            this.colzhar2.Width = 112;
             // 
             // colSaveEnable
             // 
@@ -928,18 +971,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1006, 43);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
-            // btnUpdate_PlanOrder
-            // 
-            this.btnUpdate_PlanOrder.Enabled = false;
-            this.btnUpdate_PlanOrder.ImageOptions.ImageUri.Uri = "Edit;Size16x16";
-            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(330, 8);
-            this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(250, 8, 3, 3);
-            this.btnUpdate_PlanOrder.Name = "btnUpdate_PlanOrder";
-            this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate_PlanOrder.TabIndex = 3;
-            this.btnUpdate_PlanOrder.Text = "保存";
-            this.btnUpdate_PlanOrder.Click += new System.EventHandler(this.btnUpdate_PlanOrder_Click);
-            // 
             // btnDelete_PlanOrder
             // 
             this.btnDelete_PlanOrder.Enabled = false;
@@ -951,6 +982,18 @@
             this.btnDelete_PlanOrder.TabIndex = 5;
             this.btnDelete_PlanOrder.Text = "删除";
             this.btnDelete_PlanOrder.Click += new System.EventHandler(this.btnDelete_PlanOrder_Click_1);
+            // 
+            // btnUpdate_PlanOrder
+            // 
+            this.btnUpdate_PlanOrder.Enabled = false;
+            this.btnUpdate_PlanOrder.ImageOptions.ImageUri.Uri = "Edit;Size16x16";
+            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(330, 8);
+            this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(250, 8, 3, 3);
+            this.btnUpdate_PlanOrder.Name = "btnUpdate_PlanOrder";
+            this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate_PlanOrder.TabIndex = 3;
+            this.btnUpdate_PlanOrder.Text = "保存";
+            this.btnUpdate_PlanOrder.Click += new System.EventHandler(this.btnUpdate_PlanOrder_Click);
             // 
             // MFFX
             // 

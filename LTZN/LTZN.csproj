@@ -1356,6 +1356,7 @@
     <None Include="Resources\技术日报.txt" />
     <None Include="Resources\技术日报1.txt" />
     <None Include="Resources\技术日报11.txt" />
+    <Content Include="bgm.png" />
     <Content Include="DLL\AppUpdate.exe" />
     <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
     <Content Include="DLL\Rcw.Method.dll" />
@@ -1364,6 +1365,7 @@
     <None Include="Resources\topcon.gif" />
     <None Include="Resources\down_10.gif" />
     <None Include="Resources\duote_08.gif" />
+    <None Include="Resources\bgm.png" />
     <Content Include="升级记录.txt" />
     <Content Include="炼铁技术日报.xls" />
     <None Include="数据分析\ChuTieDataSet.xsc">

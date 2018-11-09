@@ -924,14 +924,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LTZN.exe" size="5888512">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LTZN.exe" size="6306304">
       <assemblyIdentity name="LTZN" version="1.0.2.60" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lI+G7sJ9qDwiw+Yn6SXCe8Euoxw=</dsig:DigestValue>
+        <dsig:DigestValue>HITHFgcpyA0NVvVwh9oRE87r5hA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1171,7 +1171,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>N7+EQRNY/KneTV9trUZV9BN4CaI=</dsig:DigestValue>
+        <dsig:DigestValue>lqk4IPtMiF4bfYO3YnNDfKChJkc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1187,6 +1187,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="bgm.png" size="414843">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>o3dVLn3qBCaDBVHX2Eo6mfYiC10=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="DLL\AppUpdate.exe" size="43008">
     <hash>
       <dsig:Transforms>
@@ -1211,7 +1220,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>N7+EQRNY/KneTV9trUZV9BN4CaI=</dsig:DigestValue>
+      <dsig:DigestValue>lqk4IPtMiF4bfYO3YnNDfKChJkc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DLL\Skin.Bars.dll" size="5509120">

@@ -794,7 +794,7 @@
             // 
             // superTabControlPanel1
             // 
-            this.superTabControlPanel1.BackgroundImage = global::LTZN.Properties.Resources.调度;
+            this.superTabControlPanel1.BackgroundImage = global::LTZN.Properties.Resources.bgm;
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
             this.superTabControlPanel1.Name = "superTabControlPanel1";

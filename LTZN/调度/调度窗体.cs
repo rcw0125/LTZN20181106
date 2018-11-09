@@ -1506,9 +1506,16 @@ namespace LTZN.调度
         {
             try
             {
-                luciList = ddluci.GetList("to_char(zdsj,'yyyy-MM-dd')='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'  order by gaolu,zdsj");
-                gridControl_ddluci.DataSource = luciList;
+                luciList = ddluci.GetList("to_char(zdsj,'yyyy-MM-dd')='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'  order by banci,banluci,gaolu");
 
+                List<ddluci> listTemp = new List<ddluci>();
+                listTemp.AddRange(luciList.Where(o => o.BANCI == "夜班"));
+                listTemp.AddRange(luciList.Where(o => o.BANCI == "白班"));
+                listTemp.AddRange(luciList.Where(o => o.BANCI == "中班"));
+                luciList = listTemp;
+
+                gridControl_ddluci.DataSource = luciList;
+                DxSetting.SetRowColor(gridView_ddluci);
                 //计算碱度R2
                 foreach (var item in luciList)
                 {
@@ -1607,7 +1614,7 @@ namespace LTZN.调度
         private void gridView_ddluci_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             string str = e.Column.Name;
-            if (str == "colfesi"|| str == "colfep" || str == "colfes")
+            if (str == "colfesi"|| str == "colfep" || str == "colfes" || str == "coldksj")
             {
                 int hand = e.RowHandle;
                 if (hand < 0) return;
@@ -1624,6 +1631,15 @@ namespace LTZN.调度
                 if (str == "colfes" && luci.fes > 0.035)
                 {
                     e.Appearance.ForeColor = Color.Red;
+                }
+
+                if (str == "coldksj")
+                {
+                    if (!(luci.dksj.Hour == 0 && luci.dksj.Minute == 0))
+                    {
+                        e.Appearance.BackColor = Color.Green;
+                    }
+                   
                 }
             }
                     
