@@ -1365,6 +1365,7 @@
     <Content Include="bgm.png" />
     <Content Include="DLL\AppUpdate.exe" />
     <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
+    <Content Include="DLL\Rcw.Data.dll" />
     <Content Include="DLL\Rcw.Method.dll" />
     <Content Include="DLL\Skin.Bars.dll" />
     <Content Include="ltzn.ico" />

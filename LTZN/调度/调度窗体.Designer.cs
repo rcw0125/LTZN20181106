@@ -86,6 +86,7 @@
             this.colSaveEnable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDelete_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnUpdate_PlanOrder = new DevExpress.XtraEditors.SimpleButton();
             this.MFFX = new System.Windows.Forms.TabPage();
             this.c1FlexGrid1 = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -263,6 +264,7 @@
             this.gaolu3ChuTieSource = new System.Windows.Forms.BindingSource(this.components);
             this.gaolu4ChuTieSource = new System.Windows.Forms.BindingSource(this.components);
             this.gaolu5ChuTieSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl1.SuspendLayout();
             this.TcPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_PlanOrder)).BeginInit();
@@ -283,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_tzsj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             this.MFFX.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.调度数据集1)).BeginInit();
@@ -636,6 +639,7 @@
             this.gridView_ddluci.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14F);
             this.gridView_ddluci.Appearance.Row.Options.UseFont = true;
             this.gridView_ddluci.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
             this.colC_ID,
             this.colluci,
             this.colzdsj,
@@ -682,7 +686,7 @@
             this.colluci.Name = "colluci";
             this.colluci.OptionsColumn.AllowEdit = false;
             this.colluci.Visible = true;
-            this.colluci.VisibleIndex = 0;
+            this.colluci.VisibleIndex = 1;
             this.colluci.Width = 78;
             // 
             // colzdsj
@@ -694,7 +698,7 @@
             this.colzdsj.Name = "colzdsj";
             this.colzdsj.OptionsColumn.AllowEdit = false;
             this.colzdsj.Visible = true;
-            this.colzdsj.VisibleIndex = 1;
+            this.colzdsj.VisibleIndex = 2;
             this.colzdsj.Width = 71;
             // 
             // repositoryItemTimeEdit_zdsj
@@ -717,7 +721,7 @@
             this.coldgsj.FieldName = "dgsj";
             this.coldgsj.Name = "coldgsj";
             this.coldgsj.Visible = true;
-            this.coldgsj.VisibleIndex = 2;
+            this.coldgsj.VisibleIndex = 3;
             this.coldgsj.Width = 73;
             // 
             // repositoryItemTimeEdit_dgsj
@@ -745,7 +749,7 @@
             this.coldksj.FieldName = "dksj";
             this.coldksj.Name = "coldksj";
             this.coldksj.Visible = true;
-            this.coldksj.VisibleIndex = 4;
+            this.coldksj.VisibleIndex = 5;
             // 
             // repositoryItemTimeEdit_dksj
             // 
@@ -767,7 +771,7 @@
             this.coltzsj.FieldName = "tzsj";
             this.coltzsj.Name = "coltzsj";
             this.coltzsj.Visible = true;
-            this.coltzsj.VisibleIndex = 3;
+            this.coltzsj.VisibleIndex = 4;
             this.coltzsj.Width = 73;
             // 
             // repositoryItemTimeEdit_tzsj
@@ -788,7 +792,7 @@
             this.colwdsj.Name = "colwdsj";
             this.colwdsj.OptionsColumn.AllowEdit = false;
             this.colwdsj.Visible = true;
-            this.colwdsj.VisibleIndex = 6;
+            this.colwdsj.VisibleIndex = 7;
             this.colwdsj.Width = 65;
             // 
             // colquchu
@@ -799,7 +803,7 @@
             this.colquchu.FieldName = "quchu";
             this.colquchu.Name = "colquchu";
             this.colquchu.Visible = true;
-            this.colquchu.VisibleIndex = 7;
+            this.colquchu.VisibleIndex = 8;
             this.colquchu.Width = 79;
             // 
             // repositoryItemComboBox2
@@ -819,7 +823,7 @@
             this.colfeliang.FieldName = "feliang";
             this.colfeliang.Name = "colfeliang";
             this.colfeliang.Visible = true;
-            this.colfeliang.VisibleIndex = 5;
+            this.colfeliang.VisibleIndex = 6;
             this.colfeliang.Width = 60;
             // 
             // colfec
@@ -828,7 +832,7 @@
             this.colfec.Name = "colfec";
             this.colfec.OptionsColumn.AllowEdit = false;
             this.colfec.Visible = true;
-            this.colfec.VisibleIndex = 8;
+            this.colfec.VisibleIndex = 9;
             this.colfec.Width = 37;
             // 
             // colfesi
@@ -837,7 +841,7 @@
             this.colfesi.Name = "colfesi";
             this.colfesi.OptionsColumn.AllowEdit = false;
             this.colfesi.Visible = true;
-            this.colfesi.VisibleIndex = 9;
+            this.colfesi.VisibleIndex = 10;
             this.colfesi.Width = 37;
             // 
             // colfemn
@@ -846,7 +850,7 @@
             this.colfemn.Name = "colfemn";
             this.colfemn.OptionsColumn.AllowEdit = false;
             this.colfemn.Visible = true;
-            this.colfemn.VisibleIndex = 10;
+            this.colfemn.VisibleIndex = 11;
             this.colfemn.Width = 37;
             // 
             // colfep
@@ -855,7 +859,7 @@
             this.colfep.Name = "colfep";
             this.colfep.OptionsColumn.AllowEdit = false;
             this.colfep.Visible = true;
-            this.colfep.VisibleIndex = 11;
+            this.colfep.VisibleIndex = 12;
             this.colfep.Width = 37;
             // 
             // colfes
@@ -864,7 +868,7 @@
             this.colfes.Name = "colfes";
             this.colfes.OptionsColumn.AllowEdit = false;
             this.colfes.Visible = true;
-            this.colfes.VisibleIndex = 12;
+            this.colfes.VisibleIndex = 13;
             this.colfes.Width = 37;
             // 
             // colfeti
@@ -873,7 +877,7 @@
             this.colfeti.Name = "colfeti";
             this.colfeti.OptionsColumn.AllowEdit = false;
             this.colfeti.Visible = true;
-            this.colfeti.VisibleIndex = 13;
+            this.colfeti.VisibleIndex = 14;
             this.colfeti.Width = 37;
             // 
             // colfecr
@@ -882,7 +886,7 @@
             this.colfecr.Name = "colfecr";
             this.colfecr.OptionsColumn.AllowEdit = false;
             this.colfecr.Visible = true;
-            this.colfecr.VisibleIndex = 14;
+            this.colfecr.VisibleIndex = 15;
             this.colfecr.Width = 37;
             // 
             // colfeni
@@ -891,7 +895,7 @@
             this.colfeni.Name = "colfeni";
             this.colfeni.OptionsColumn.AllowEdit = false;
             this.colfeni.Visible = true;
-            this.colfeni.VisibleIndex = 15;
+            this.colfeni.VisibleIndex = 16;
             this.colfeni.Width = 37;
             // 
             // colzhasio2
@@ -900,7 +904,7 @@
             this.colzhasio2.Name = "colzhasio2";
             this.colzhasio2.OptionsColumn.AllowEdit = false;
             this.colzhasio2.Visible = true;
-            this.colzhasio2.VisibleIndex = 16;
+            this.colzhasio2.VisibleIndex = 17;
             this.colzhasio2.Width = 37;
             // 
             // colzhacao
@@ -909,7 +913,7 @@
             this.colzhacao.Name = "colzhacao";
             this.colzhacao.OptionsColumn.AllowEdit = false;
             this.colzhacao.Visible = true;
-            this.colzhacao.VisibleIndex = 17;
+            this.colzhacao.VisibleIndex = 18;
             this.colzhacao.Width = 37;
             // 
             // colzhamgo
@@ -918,7 +922,7 @@
             this.colzhamgo.Name = "colzhamgo";
             this.colzhamgo.OptionsColumn.AllowEdit = false;
             this.colzhamgo.Visible = true;
-            this.colzhamgo.VisibleIndex = 18;
+            this.colzhamgo.VisibleIndex = 19;
             this.colzhamgo.Width = 37;
             // 
             // colzhaal2o3
@@ -927,7 +931,7 @@
             this.colzhaal2o3.Name = "colzhaal2o3";
             this.colzhaal2o3.OptionsColumn.AllowEdit = false;
             this.colzhaal2o3.Visible = true;
-            this.colzhaal2o3.VisibleIndex = 19;
+            this.colzhaal2o3.VisibleIndex = 20;
             this.colzhaal2o3.Width = 37;
             // 
             // colzhas
@@ -936,7 +940,7 @@
             this.colzhas.Name = "colzhas";
             this.colzhas.OptionsColumn.AllowEdit = false;
             this.colzhas.Visible = true;
-            this.colzhas.VisibleIndex = 20;
+            this.colzhas.VisibleIndex = 21;
             this.colzhas.Width = 37;
             // 
             // colzhatio2
@@ -945,7 +949,7 @@
             this.colzhatio2.Name = "colzhatio2";
             this.colzhatio2.OptionsColumn.AllowEdit = false;
             this.colzhatio2.Visible = true;
-            this.colzhatio2.VisibleIndex = 21;
+            this.colzhatio2.VisibleIndex = 22;
             this.colzhatio2.Width = 37;
             // 
             // colzhar2
@@ -954,7 +958,7 @@
             this.colzhar2.Name = "colzhar2";
             this.colzhar2.OptionsColumn.AllowEdit = false;
             this.colzhar2.Visible = true;
-            this.colzhar2.VisibleIndex = 22;
+            this.colzhar2.VisibleIndex = 23;
             this.colzhar2.Width = 112;
             // 
             // colSaveEnable
@@ -965,6 +969,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnDelete_PlanOrder);
+            this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit2);
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate_PlanOrder);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -984,14 +989,31 @@
             this.btnDelete_PlanOrder.Text = "删除";
             this.btnDelete_PlanOrder.Click += new System.EventHandler(this.btnDelete_PlanOrder_Click_1);
             // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Location = new System.Drawing.Point(310, 8);
+            this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(230, 8, 3, 3);
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit2.Properties.Items.AddRange(new object[] {
+            "夜班",
+            "白班",
+            "中班"});
+            this.comboBoxEdit2.Size = new System.Drawing.Size(100, 26);
+            this.comboBoxEdit2.TabIndex = 6;
+            this.comboBoxEdit2.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit2_SelectedIndexChanged);
+            // 
             // btnUpdate_PlanOrder
             // 
             this.btnUpdate_PlanOrder.Enabled = false;
             this.btnUpdate_PlanOrder.ImageOptions.ImageUri.Uri = "Edit;Size16x16";
-            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(330, 8);
-            this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(250, 8, 3, 3);
+            this.btnUpdate_PlanOrder.Location = new System.Drawing.Point(415, 8);
+            this.btnUpdate_PlanOrder.Margin = new System.Windows.Forms.Padding(2, 8, 3, 3);
             this.btnUpdate_PlanOrder.Name = "btnUpdate_PlanOrder";
-            this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate_PlanOrder.Size = new System.Drawing.Size(83, 29);
             this.btnUpdate_PlanOrder.TabIndex = 3;
             this.btnUpdate_PlanOrder.Text = "保存";
             this.btnUpdate_PlanOrder.Click += new System.EventHandler(this.btnUpdate_PlanOrder_Click);
@@ -3457,6 +3479,13 @@
             this.gaolu5ChuTieSource.AllowNew = false;
             this.gaolu5ChuTieSource.DataSource = typeof(LTZN.Data.ChuTie);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "BANLUCI";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
             // 调度窗体
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3489,6 +3518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit_tzsj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             this.MFFX.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.调度数据集1)).EndInit();
@@ -3833,5 +3863,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit_dksj;
         private DevExpress.XtraEditors.SimpleButton btnDelete_PlanOrder;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

@@ -1247,7 +1247,6 @@ C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\DevExpress.RichEdit.v17.2.Core.
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\DevExpress.XtraTreeList.v17.2.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\MySql.Data.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\DevExpress.Office.v17.2.Core.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1Chart.2.xml
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1Command.2.xml
@@ -1412,9 +1411,8 @@ C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.application
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.csproj.CopyComplete
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.exe
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.pdb
-C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\MySql.Data.xml
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1SuperTooltip.2.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Skin.Bars.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1SuperTooltip.2.xml
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.csprojAssemblyReference.cache
+C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Rcw.Data.dll

@@ -116,9 +116,9 @@ namespace LTZN
             }
         }
 
-        private DateTime _zdsj;     
+        private DateTime? _zdsj;     
         [DisplayName("整点时间")]
-        public DateTime zdsj
+        public DateTime? zdsj
         {
             get
             {
@@ -134,9 +134,9 @@ namespace LTZN
             }
         }
 
-        private DateTime _dgsj;
+        private DateTime? _dgsj;
         [DisplayName("对罐时间")]
-        public DateTime dgsj
+        public DateTime? dgsj
         {
             get
             {
@@ -152,9 +152,9 @@ namespace LTZN
             }
         }
 
-        private DateTime _kksj;
+        private DateTime? _kksj;
         [DisplayName("开口时间")]
-        public DateTime kksj
+        public DateTime? kksj
         {
             get
             {
@@ -170,9 +170,9 @@ namespace LTZN
             }
         }
 
-        private DateTime _dksj;
+        private DateTime? _dksj;
         [DisplayName("出铁时间")]
-        public DateTime dksj
+        public DateTime? dksj
         {
             get
             {
@@ -188,9 +188,9 @@ namespace LTZN
             }
         }
 
-        private DateTime _tzsj;
+        private DateTime? _tzsj;
         [DisplayName("通知时间")]
-        public DateTime tzsj
+        public DateTime? tzsj
         {
             get
             {
@@ -206,9 +206,9 @@ namespace LTZN
             }
         }
 
-        private double _wdsj;
+        private double? _wdsj;
         [DisplayName("晚点时间")]
-        public double wdsj
+        public double? wdsj
         {
             get
             {
@@ -242,9 +242,9 @@ namespace LTZN
             }
         }
 
-        private double _feliang;
+        private double? _feliang;
         [DisplayName("产量")]
-        public double feliang
+        public double? feliang
         {
             get
             {
@@ -260,9 +260,10 @@ namespace LTZN
             }
         }
 
-        private double _fec;
+        private double? _fec;
         [DisplayName("碳[C]")]
-        public double fec
+        [DbTableColumn(IsCalcColumn =true)]
+        public double? fec
         {
             get
             {
@@ -278,9 +279,10 @@ namespace LTZN
             }
         }
 
-        private double _fesi;
+        private double? _fesi;
         [DisplayName("硅[Si]")]
-        public double fesi
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? fesi
         {
             get
             {
@@ -296,9 +298,10 @@ namespace LTZN
             }
         }
 
-        private double _femn;
+        private double? _femn;
         [DisplayName("锰[Mn]")]
-        public double femn
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? femn
         {
             get
             {
@@ -313,9 +316,10 @@ namespace LTZN
                 }
             }
         }
-        private double _fep;
+        private double? _fep;
         [DisplayName("磷[P]")]
-        public double fep
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? fep
         {
             get
             {
@@ -331,9 +335,10 @@ namespace LTZN
             }
         }
 
-        private double _fes;
+        private double? _fes;
         [DisplayName("硫[S]")]
-        public double fes
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? fes
         {
             get
             {
@@ -349,9 +354,10 @@ namespace LTZN
             }
         }
 
-        private double _feti;
+        private double? _feti;
         [DisplayName("钛[Ti]")]
-        public double feti
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? feti
         {
             get
             {
@@ -367,9 +373,10 @@ namespace LTZN
             }
         }
 
-        private double _fecr;
+        private double? _fecr;
         [DisplayName("铬[Cr]")]
-        public double fecr
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? fecr
         {
             get
             {
@@ -384,9 +391,10 @@ namespace LTZN
                 }
             }
         }
-        private double _feni;
+        private double? _feni;
         [DisplayName("镍[Ni]")]
-        public double feni
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? feni
         {
             get
             {
@@ -402,9 +410,10 @@ namespace LTZN
             }
         }
 
-        private double _zhasio2;
+        private double? _zhasio2;
         [DisplayName("渣SiO2")]
-        public double zhasio2
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhasio2
         {
             get
             {
@@ -420,9 +429,10 @@ namespace LTZN
             }
         }
 
-        private double _zhacao;
+        private double? _zhacao;
         [DisplayName("渣氧化钙")]
-        public double zhacao
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhacao
         {
             get
             {
@@ -438,9 +448,10 @@ namespace LTZN
             }
         }
 
-        private double _zhamgo;
+        private double? _zhamgo;
         [DisplayName("渣MgO")]
-        public double zhamgo
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhamgo
         {
             get
             {
@@ -455,9 +466,10 @@ namespace LTZN
                 }
             }
         }
-        private double _zhaal2o3;
+        private double? _zhaal2o3;
         [DisplayName("渣Al2O3")]
-        public double zhaal2o3
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhaal2o3
         {
             get
             {
@@ -473,9 +485,10 @@ namespace LTZN
             }
         }
 
-        private double _zhas;
+        private double? _zhas;
         [DisplayName("渣S")]
-        public double zhas
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhas
         {
             get
             {
@@ -491,9 +504,10 @@ namespace LTZN
             }
         }
 
-        private double _zhatio2;
+        private double? _zhatio2;
         [DisplayName("渣TiO2")]
-        public double zhatio2
+        [DbTableColumn(IsCalcColumn = true)]
+        public double? zhatio2
         {
             get
             {
@@ -509,9 +523,10 @@ namespace LTZN
             }
         }
 
-        private double _zhar2;
+        private double? _zhar2;
         [DisplayName("渣R2")]
-        public double zhar2
+
+        public double? zhar2
         {
             get
             {

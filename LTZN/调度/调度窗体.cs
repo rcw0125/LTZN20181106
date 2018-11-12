@@ -71,6 +71,7 @@ namespace LTZN.调度
             InitializeComponent();
 
             comboBoxEdit1.SelectedIndex = 0;
+            
             tabControl1.SelectedIndex = 1;
             DataBind();
 
@@ -113,7 +114,9 @@ namespace LTZN.调度
             textBoxJSB.BackColor = Color.LightYellow;
 
             LtznUserManager.instance.RegisterHandler(this, instance_UserChanged);
-            loadDdLuCi();
+            
+
+
         }
 
         private void 调度窗体_Load(object sender, EventArgs e)
@@ -130,6 +133,7 @@ namespace LTZN.调度
             //}
             //selectLuci(pDate,pBanci,pBanluci);
             this.ddmfTableAdapter1.FillByRQ(this.调度数据集1.DDMF, this.dateTimePicker1.Value.Date);
+            comboBoxEdit2.SelectedIndex = 0;
 
         }
 
@@ -1506,25 +1510,43 @@ namespace LTZN.调度
         {
             try
             {
-                luciList = ddluci.GetList("to_char(zdsj,'yyyy-MM-dd')='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'  order by banci,banluci,gaolu");
-
-                List<ddluci> listTemp = new List<ddluci>();
-                listTemp.AddRange(luciList.Where(o => o.BANCI == "夜班"));
-                listTemp.AddRange(luciList.Where(o => o.BANCI == "白班"));
-                listTemp.AddRange(luciList.Where(o => o.BANCI == "中班"));
-                luciList = listTemp;
-
-                gridControl_ddluci.DataSource = luciList;
-                DxSetting.SetRowColor(gridView_ddluci);
+                string sql = " to_char(zdsj,'yyyy-MM-dd')='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' ";
+                sql += " and banci='"+comboBoxEdit2.Text.Trim()+ "' order by banluci,gaolu";
+                luciList = ddluci.GetList(sql);
                 //计算碱度R2
                 foreach (var item in luciList)
                 {
-                    if (item.zhacao != 0 && item.zhasio2 != 0 && item.zhar2 == 0)
+                    if (item.zhacao > 0 && item.zhasio2 > 0 && item.zhar2==null)
                     {
                         item.zhar2 = item.zhacao / item.zhasio2;
                         item.Save();
                     }
                 }
+                int i = 1;
+                List<ddluci> listTemp = new List<ddluci>();
+                foreach (var item in luciList)
+                {
+                    
+                    if (item.BANLUCI != i.ToString())
+                    {
+                        i = Convert.ToInt16(item.BANLUCI);
+
+                        ddluci kongHang = new ddluci();
+                        ddluci kongHang2 = new ddluci();
+
+                        listTemp.Add(kongHang);
+                        listTemp.Add(kongHang2);
+                    }
+                    listTemp.Add(item);
+                }
+
+                
+             
+                luciList = listTemp;
+
+                gridControl_ddluci.DataSource = luciList;
+                DxSetting.SetRowColor(gridView_ddluci);
+               
                 gridView_ddluci.RefreshData();
                 gridView_ddluci.BestFitColumns();
 
@@ -1540,86 +1562,136 @@ namespace LTZN.调度
         List<wdjg> wdjgList = null;
         private void btnUpdate_PlanOrder_Click(object sender, EventArgs e)
         {
-            if (wdjgList == null)
+            try
             {
-                wdjgList = wdjg.GetList();
-            }
-            //修改时间节点 并计算晚点时间  计算料批
-            foreach (var item in luciList)
-            {
-                if (item.DataState == DataRowState.Modified)
+                if (wdjgList == null)
                 {
-                    if (item.dgsj != null && item.dksj != null)
+                    wdjgList = wdjg.GetList();
+                }
+                //修改时间节点 并计算晚点时间  计算料批
+                foreach (var item in luciList)
+                {
+                    if (item.luci.IsNullOrEmpty())
+                    {
+                        item.DataState = DataRowState.Unchanged;
+                        continue;
+                    }
+                    if (item.DataState == DataRowState.Modified)
                     {
                        
-                        if (item.zdsj.Hour < 3)
+                        if (item.dgsj != null && item.dksj != null)
                         {
-                            if (item.dgsj.Hour > 20)
+
+
+                            xiuZheng(item.dgsj, item.zdsj);
+                            xiuZheng(item.dksj, item.zdsj);
+
+                            double wdjg = 50;
+                            try
                             {
-                                item.dgsj = item.dgsj.AddDays(-1);
+                                wdjg = wdjgList.FirstOrDefault(o => o.GAOLU == item.GAOLU).wdsj;
                             }
-                            if (item.dksj.Hour > 20)
+                            catch
                             {
-                                item.dksj = item.dksj.AddDays(-1);
+
                             }
-                        }
-                        if (item.zdsj.Hour > 22)
-                        {
-                            if (item.dksj.Hour < 5)
+
+
+                            //出铁时间 大于整点时间
+                            if ((item.dksj > item.zdsj) && item.dksj - item.dgsj > TimeSpan.FromMinutes(wdjg))
                             {
-                                item.dksj = item.dksj.AddDays(1);
-                            }
-                        }
-                        double wdjg = 50;
-                        wdjg = wdjgList.FirstOrDefault(o => o.GAOLU == item.GAOLU).wdsj;
-                                           
-                        //出铁时间 大于整点时间
-                        if ((item.dksj > item.zdsj) && item.dksj - item.dgsj > TimeSpan.FromMinutes(wdjg))
-                        {
-                            if (item.zdsj - item.dgsj < TimeSpan.FromMinutes(wdjg))
-                            {
-                                //出铁时间-对罐时间-间隔
-                                item.wdsj = Math.Floor((item.dksj - item.dgsj - TimeSpan.FromMinutes(wdjg)).TotalMinutes);
+                                if (item.zdsj - item.dgsj < TimeSpan.FromMinutes(wdjg))
+                                {
+                                    //出铁时间-对罐时间-间隔
+                                    item.wdsj = Math.Floor((Convert.ToDateTime(item.dksj) - Convert.ToDateTime(item.dgsj) - TimeSpan.FromMinutes(wdjg)).TotalMinutes);
+                                }
+                                else
+                                {
+                                    item.wdsj = Math.Floor(((TimeSpan)(item.dksj - item.zdsj)).TotalMinutes);
+                                }
                             }
                             else
                             {
-                                item.wdsj = Math.Floor(((TimeSpan)(item.dksj - item.zdsj)).TotalMinutes);
+                                item.wdsj = 0;
                             }
-                        }
-                        else
-                        {
-                            item.wdsj = 0;
-                        }
-                        try
-                        {
-                            //计算料批
-                            string strSql = "select count(distinct pishu)  from lt_liao where  t>(select dksj from ddluci where luci='"+(Convert.ToInt32(item.luci)-1).ToString()+"') and t<=(select dksj from ddluci where luci='"+item.luci+"');";
-                            var obj = DbContext.ExecuteScalar(strSql);
-                            item.liaopi = Convert.ToDouble(obj);
-                        }
-                        catch
-                        {
+                            try
+                            {
+                                //计算料批
+                                string strSql = "select count(distinct pishu)  from lt_liao where  t>(select dksj from ddluci where luci='" + (Convert.ToInt32(item.luci) - 1).ToString() + "') and t<=(select dksj from ddluci where luci='" + item.luci + "');";
+                                var obj = DbContext.ExecuteScalar(strSql);
+                                item.liaopi = Convert.ToDouble(obj);
+                            }
+                            catch
+                            {
+
+                            }
 
                         }
-                       
+
+
                     }
 
-
                 }
-               
+                luciList.Update();
             }
-            luciList.Update();
+            catch(Exception ex)
+            {
+                MessageBox.Show("出现异常" + ex.ToString());
+                loadDdLuCi();
+            }
+
+         
+        }
+
+        public void xiuZheng(DateTime? xzTime, DateTime? zdTime)
+        {
+            DateTime xztime = Convert.ToDateTime(xzTime);
+            DateTime zdtime = Convert.ToDateTime(zdTime);
+            if (zdtime.Hour < 3)
+            {
+                if (xztime.Hour > 20)
+                {
+                    xztime = Convert.ToDateTime(zdtime.AddDays(-1).ToString("yyyy-MM-dd") + " " + xztime.ToString("HH:mm:ss"));
+                }
+                else
+                {
+                    xztime = Convert.ToDateTime(zdtime.ToString("yyyy-MM-dd") + " " + xztime.ToString("HH:mm:ss"));
+                }
+
+            }
+            else if (zdtime.Hour > 22)
+            {
+                if (xztime.Hour < 5)
+                {
+                    xztime = Convert.ToDateTime(zdtime.AddDays(1).ToString("yyyy-MM-dd") + " " + xztime.ToString("HH:mm:ss"));
+                }
+                else
+                {
+                    xztime = Convert.ToDateTime(zdtime.ToString("yyyy-MM-dd") + " " + xztime.ToString("HH:mm:ss"));
+                }
+            }
+            else
+            {
+
+                xztime = Convert.ToDateTime(zdtime.ToString("yyyy-MM-dd") + " " + xztime.ToString("HH:mm:ss"));
+            }
+           
         }
 
         private void gridView_ddluci_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             string str = e.Column.Name;
+            int hand = e.RowHandle;
+            if (hand < 0) return;
+            var luci = this.gridView_ddluci.GetRow(hand) as ddluci;
+            if (luci == null) return;
+            if (luci.luci == ""||luci.luci==null)
+            {
+                e.Appearance.BackColor = Color.Yellow;
+            }
             if (str == "colfesi"|| str == "colfep" || str == "colfes" || str == "coldksj")
             {
-                int hand = e.RowHandle;
-                if (hand < 0) return;
-                var luci = this.gridView_ddluci.GetRow(hand) as ddluci;
-                if (luci == null) return;
+                
                 if (str == "colfesi"&&luci.fesi > 0.7)
                 {
                     e.Appearance.ForeColor = Color.Red;
@@ -1635,12 +1707,12 @@ namespace LTZN.调度
 
                 if (str == "coldksj")
                 {
-                    if (!(luci.dksj.Hour == 0 && luci.dksj.Minute == 0))
+                    if (!(Convert.ToDateTime(luci.dksj).Hour == 0 && Convert.ToDateTime(luci.dksj).Minute == 0))
                     {
                         e.Appearance.BackColor = Color.Green;
-                    }
-                   
+                    }              
                 }
+               
             }
                     
         }
@@ -1655,21 +1727,39 @@ namespace LTZN.调度
             try
             {
                 var currow = gridView_ddluci.GetFocusedRow() as ddluci;
-                foreach (var item in luciList)
+                if (currow.luci.IsNullOrEmpty())
                 {
-                    if (currow.GAOLU == item.GAOLU)
+                    return;
+                }
+
+                var lclist = ddluci.GetList(" gaolu=@gaolu and luci >=@luci and zdsj >=@zdsj", currow.GAOLU, currow.luci,DateTime.Now.AddDays(-2));
+                var lc = lclist.Where(o => o.luci == currow.luci).FirstOrDefault();
+                if (lc == null)
+                {
+                    MessageBox.Show("该铁次不存在");
+                    loadDdLuCi();
+                }
+                else
+                {
+                    foreach (var item in lclist)
                     {
-                        if (item.zdsj > currow.zdsj)
+                        if (item.luci != currow.luci)
                         {
                             item.luci = (Convert.ToInt32(item.luci) - 1).ToString();
                         }
+                        else
+                        {
+                            item.DataState = DataRowState.Deleted;
+                        }                      
                     }
+                    
+                    lclist.Update();
+                    loadDdLuCi();
                 }
-                currow.DataState = DataRowState.Deleted;
 
-                luciList.Update();
 
-                loadDdLuCi();
+
+               
 
             }
             catch(Exception ex)
@@ -1687,6 +1777,12 @@ namespace LTZN.调度
             var currow = gridView_ddluci.GetFocusedRow() as ddluci;
             updateDdluci frm = new updateDdluci();
             frm.ShowDialog();
+        }
+
+        private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadDdLuCi();
+
         }
     }
 }

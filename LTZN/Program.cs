@@ -17,15 +17,16 @@ namespace LTZN
         [STAThread]
         static void Main()
         {
-            string oracleAddress = "192.168.39.201";
-            if (GetLocalIP().Contains("192.168.38"))
-            {
-                oracleAddress = "192.168.38.28";
-            }
-            DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, oracleAddress, "liantie", "LF", "LF");
+            //string oracleAddress = "192.168.39.201";
+            //if (GetLocalIP().Contains("192.168.38"))
+            //{
+            //    oracleAddress = "192.168.38.28";
+            //}
+            //DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, oracleAddress, "liantie", "LF", "LF");
             //DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.204", "orcl", "LF", "LF");
-            //DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.3", "xgmes", "LF", "LF");
+            DbContext.AddDataSource("ltzn", DbContext.DbType.Oracle, "192.168.2.3", "xgmes", "LF", "LF");
             DbContext.DefaultDataSourceName = "ltzn";
+            DbContext.Create<wdjg>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
