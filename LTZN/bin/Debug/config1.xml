@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WeightParem>
+  <type>PCL-730</type>
+  <port>COM3</port>
+  <baudrate>9600</baudrate>
+  <PCLAddress>300</PCLAddress>
+  <PCLPort>1</PCLPort>
+  <PCLInterface>0</PCLInterface>
+  <PCLInterfaceX>1</PCLInterfaceX>
+  <istest>0</istest>
+  <ByteSize>7</ByteSize>
+  <Parity>None</Parity>
+  <StopBits>One</StopBits>
+  <copynum>2</copynum>
+  <PrintModuleName>12</PrintModuleName>
+  <LocalDbName>acctrue_wms</LocalDbName>
+  <HandShake isuse="Y">None</HandShake>
+  <RtsEnable isuse="Y">False</RtsEnable>
+  <DtrEnable isuse="Y">False</DtrEnable>
+  <DataStar isuse="Y">5</DataStar>
+  <DataEnd isuse="Y">11</DataEnd>
+  <DataStarChar isuse="Y">GS</DataStarChar>
+  <DataEndChar isuse="Y">6</DataEndChar>
+  <Pointwz isuse="Y">1</Pointwz>
+  <DataLen isuse="Y">16</DataLen>
+  <JHCS>2</JHCS>
+  <QSJG>300</QSJG>
+  <!--<nctest>nctest</nctest>-->
+</WeightParem>

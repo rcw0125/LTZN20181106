@@ -92,6 +92,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WinForms.DLL</HintPath>
@@ -292,6 +296,12 @@
     </Compile>
     <Compile Include="生产计划\wdjg.cs" />
     <Compile Include="调度\ddluci.cs" />
+    <Compile Include="调度\updateDdluci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="调度\updateDdluci.Designer.cs">
+      <DependentUpon>updateDdluci.cs</DependentUpon>
+    </Compile>
     <Compile Include="质量日报\DDTTY.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -628,6 +638,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DLL\AppUpdate.exe.config" />
+    <None Include="DLL\AutoUpdate.config" />
     <None Include="Properties\DataSources\ddluci.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1350,6 +1362,8 @@
     <None Include="Resources\技术日报.txt" />
     <None Include="Resources\技术日报1.txt" />
     <None Include="Resources\技术日报11.txt" />
+    <Content Include="bgm.png" />
+    <Content Include="DLL\AppUpdate.exe" />
     <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
     <Content Include="DLL\Rcw.Method.dll" />
     <Content Include="DLL\Skin.Bars.dll" />
@@ -1357,6 +1371,7 @@
     <None Include="Resources\topcon.gif" />
     <None Include="Resources\down_10.gif" />
     <None Include="Resources\duote_08.gif" />
+    <None Include="Resources\bgm.png" />
     <Content Include="升级记录.txt" />
     <Content Include="炼铁技术日报.xls" />
     <None Include="数据分析\ChuTieDataSet.xsc">

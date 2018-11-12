@@ -19,7 +19,6 @@ namespace LTZN
         public PlanOrderFrm()
         {
             DbContext.Create<PlanOrder>();
-
             InitializeComponent();
             comboBoxEdit1.SelectedIndex = 0;
             
@@ -43,7 +42,7 @@ namespace LTZN
 
             PlanOrderList = PlanOrder.GetList("gaolu=@gaolu order by xuhao ",comboBoxEdit1.Text.Trim());
             gridControl_PlanOrder.DataSource = PlanOrderList;
-            DxSetting.SetMultiSelect(gridView_PlanOrder);
+         
         }
       
         /// <summary>
@@ -62,9 +61,8 @@ namespace LTZN
         /// <param name="e"></param>
         private void btnUpdate_PlanOrder_Click(object sender, EventArgs e)
         {
-            var datalist = PlanOrder.GetSelectedRows(gridView_PlanOrder);
-
-            foreach (var item in datalist)
+           
+            foreach (var item in PlanOrderList)
             {
                 if (item.ZDSJ == "")
                 {
@@ -74,7 +72,7 @@ namespace LTZN
             }
             //修改操作，如果其他值修改，在ForEach中修改
             //datalist.ForEach(o => o.DataState = DataRowState.Deleted);
-            datalist.Update();
+            PlanOrderList.Update();
             loadData();
 
         }
@@ -117,51 +115,13 @@ namespace LTZN
         {
             if (MessageBox.Show("确认要删除所选数据吗") == DialogResult.OK)
             {
-                var datalist = PlanOrder.GetSelectedRows(gridView_PlanOrder);
-                datalist.ForEach(o => o.DataState = DataRowState.Deleted);
-                datalist.Update();
+                var curRow = gridView_PlanOrder.GetFocusedRow() as PlanOrder;
+                curRow.DataState = DataRowState.Deleted;
+                PlanOrderList.Update();
                 loadData();
             }                   
         }
-        /// <summary>
-        /// 炉次预览
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            string strSql = "select max(luci) from ddluci where gaolu='"+comboBoxEdit1.Text.Substring(0,1)+"'";
-            var obj = DbContext.ExecuteScalar(strSql);
-            int maxLuci = 1;
-            if (obj == null || Convert.IsDBNull(obj))
-            {
-                MessageBox.Show("没有最大炉号");
-                return;
-            }
-            else
-            {
-                maxLuci = Convert.ToInt32(obj);
-            }         
-
-            foreach (var item in PlanOrderList)
-            {
-                item.LUHAO = (maxLuci + 1).ToString();
-                maxLuci++;
-            }
-            gridView_PlanOrder.RefreshData();
-
-
-        }
-        /// <summary>
-        /// 生成计划
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+           
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadData();

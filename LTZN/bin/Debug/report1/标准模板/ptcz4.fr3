@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" Version="3.20" DotMatrixReport="False" EngineOptions.UseFileCache="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" ReportOptions.CreateDate="40768.0456651389" ReportOptions.Description.Text="" ReportOptions.LastChange="41237.6839539931" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="0844617461736574730100095661726961626C65730100055374796C650100">
+  <TfrxReportPage Name="Page1" PaperWidth="105" PaperHeight="70" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMemoView Name="Memo1" Left="11.33859" Top="45.35436" Width="52.91342" Height="30.23624" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="ç‰Œå·&#13;&#10;GRADE"/>
+    <TfrxMemoView Name="Memo2" Left="188.9765" Top="45.35436" Width="37.7953" Height="30.23624" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="è§„æ ¼&#13;&#10;SIZE"/>
+    <TfrxMemoView Name="Memo3" Left="11.33859" Top="75.5906" Width="52.91342" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="æ‰¹å·&#13;&#10;BATCH NO"/>
+    <TfrxMemoView Name="Memo4" Left="188.9765" Top="75.5906" Width="41.57483" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="é‡é‡&#13;&#10;WEIGHT"/>
+    <TfrxMemoView Name="Memo5" Left="11.33859" Top="105.82684" Width="52.91342" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="é’©å·&#13;&#10;HOOK NO"/>
+    <TfrxMemoView Name="Memo6" Left="188.9765" Top="105.82684" Width="37.7953" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="ç­åˆ«&#13;&#10;SHIFT"/>
+    <TfrxMemoView Name="Memo7" Left="11.33859" Top="136.06308" Width="52.91342" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="æŠ€æœ¯æ ‡å‡†&#13;&#10;STANDARD"/>
+    <TfrxMemoView Name="Memo8" Left="188.9765" Top="136.06308" Width="34.01577" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="ËÎÌå" Font.Style="1" ParentFont="False" Text="æ—¥æœŸ&#13;&#10;DATE"/>
+    <TfrxMemoView Name="memoPH" Left="64.25201" Top="49.13389" Width="120.94496" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line1" Left="64.25201" Top="75.5906" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memopch" Left="64.25201" Top="83.14966" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line2" Left="64.25201" Top="105.82684" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memogh" Left="64.25201" Top="109.60637" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line3" Left="64.25201" Top="132.28355" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memobz" Left="64.25201" Top="139.84261" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line4" Left="64.25201" Top="162.51979" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memogg" Left="230.55133" Top="49.13389" Width="120.94496" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line5" Left="230.55133" Top="75.5906" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memojz" Left="230.55133" Top="83.14966" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line6" Left="230.55133" Top="105.82684" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memobb" Left="230.55133" Top="109.60637" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line7" Left="230.55133" Top="132.28355" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxMemoView Name="memorq" Left="230.55133" Top="139.84261" Width="120.94496" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="ËÎÌå" Font.Style="0" ParentFont="False" Text=""/>
+    <TfrxLineView Name="Line8" Left="230.55133" Top="162.51979" Width="120.94496" Height="0" Frame.Typ="4"/>
+    <TfrxBarCodeView Name="BarCode1" Left="18.89765" Top="200.31509" Width="194" Height="56.69295" BarType="bcCode39" Rotation="0" Text="3105011790202" WideBarRatio="2" Zoom="1"/>
+    <TfrxMemoView Name="memowlh" Left="241.88992" Top="207.87415" Width="49.13389" Height="26.45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-24" Font.Name="ËÎÌå" Font.Style="1" Frame.Typ="15" ParentFont="False" Text="801"/>
+    <TfrxMemoView Name="memopcinfo" Left="257.00804" Top="196.53556" Width="105.82684" Height="22.67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="ËÎÌå" Font.Style="0" HAlign="haRight" ParentFont="False" Text=""/>
+  </TfrxReportPage>
+</TfrxReport>
