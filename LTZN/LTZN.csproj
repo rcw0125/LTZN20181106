@@ -296,6 +296,12 @@
     </Compile>
     <Compile Include="生产计划\wdjg.cs" />
     <Compile Include="调度\ddluci.cs" />
+    <Compile Include="调度\updateDdluci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="调度\updateDdluci.Designer.cs">
+      <DependentUpon>updateDdluci.cs</DependentUpon>
+    </Compile>
     <Compile Include="质量日报\DDTTY.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

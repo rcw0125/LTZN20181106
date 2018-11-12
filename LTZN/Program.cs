@@ -28,7 +28,7 @@ namespace LTZN
             DbContext.DefaultDataSourceName = "ltzn";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Rcw.Method.Common.CheckUpdate();
+            
             Rcw.Method.SingleApplication.Run(new 炼铁智能主窗体());          
         }
 

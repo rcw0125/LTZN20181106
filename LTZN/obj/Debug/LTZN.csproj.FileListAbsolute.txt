@@ -1417,3 +1417,4 @@ C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1SuperTooltip.2.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Skin.Bars.dll
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\C1.Win.C1SuperTooltip.2.xml
 C:\Users\rcw\Desktop\LTZN20181106\LTZN\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\rcw\Desktop\LTZN20181106\LTZN\obj\Debug\LTZN.csprojAssemblyReference.cache

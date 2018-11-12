@@ -19,6 +19,7 @@ namespace LTZN
         skinBars skin = new skinBars();
         public 炼铁智能主窗体()
         {
+            Rcw.Method.Common.CheckUpdate();
             InitializeComponent();
             LtznUserManager.instance.RegisterHandler(this, instance_UserChanged);
             //UDPListener.instance.MsgEvent += new MsgEventDelegate(instance_MsgEvent);

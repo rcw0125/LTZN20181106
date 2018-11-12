@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_135C528CB4854524A931FDBF3C7198CF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1C321DF668538CF06EEC1EBF7465FE2E"
         "OwnerKey" = "8:_8609953C0E0343CDA35D22102CDFFD86"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,18 +101,6 @@
         {
         "MsmKey" = "8:_2CC0D704229C3B22F7AAFED3AE297636"
         "OwnerKey" = "8:_2830D5204A3F604F215DC5694DF9557D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2E7E0FE220734BE3AA1673095E2DEDD1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F2C3B779F4B738733029F220F9A78"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -298,13 +292,19 @@
         "Entry"
         {
         "MsmKey" = "8:_62CA7F9578CE6C510F26124F1FEF7AFC"
-        "OwnerKey" = "8:_1D4D2800C6DEE821A65A6F9C0BF436D5"
+        "OwnerKey" = "8:_3A5B12DEFC5C6079D951ADF23A1B7C27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_62CA7F9578CE6C510F26124F1FEF7AFC"
-        "OwnerKey" = "8:_3A5B12DEFC5C6079D951ADF23A1B7C27"
+        "OwnerKey" = "8:_1D4D2800C6DEE821A65A6F9C0BF436D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_62FDBDBE996147F1ADAE8427C0BAA399"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -407,12 +407,6 @@
         {
         "MsmKey" = "8:_7B39EDD73222E759A7F9AF2D709E9959"
         "OwnerKey" = "8:_2CC0D704229C3B22F7AAFED3AE297636"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7E8F843E82C24E1A95E2307F82533821"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -579,6 +573,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E1AED871E537401A9D0AA746C526AF93"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F5899CC30913DCA4E1C06B2DD9ABA56B"
         "OwnerKey" = "8:_8609953C0E0343CDA35D22102CDFFD86"
         "MsmSig" = "8:_UNDEFINED"
@@ -610,37 +610,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_62CA7F9578CE6C510F26124F1FEF7AFC"
+        "OwnerKey" = "8:_6AE936227E392A6CC147A67AFBD03A17"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2E7E0FE220734BE3AA1673095E2DEDD1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8609953C0E0343CDA35D22102CDFFD86"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C057FDB7167AACA0B140A7CBC98A71BD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5A2C2BB8BB9D3A06A5E489E1A30E2E57"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B8A768BC13F95D0C08648471694F9C2C"
+        "OwnerKey" = "8:_135C528CB4854524A931FDBF3C7198CF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -652,7 +628,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6AE936227E392A6CC147A67AFBD03A17"
+        "OwnerKey" = "8:_C057FDB7167AACA0B140A7CBC98A71BD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B8A768BC13F95D0C08648471694F9C2C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5A2C2BB8BB9D3A06A5E489E1A30E2E57"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8609953C0E0343CDA35D22102CDFFD86"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -823,6 +817,12 @@
         "OwnerKey" = "8:_799059CA43689EF16A35837F90001DA3"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_62CA7F9578CE6C510F26124F1FEF7AFC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -831,7 +831,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ltznSetup.msi"
+        "OutputFilename" = "8:Debug\\appsetup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -841,6 +841,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -857,6 +873,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -880,7 +904,7 @@
                 "Message" = "8:[VSDNETMSG]"
                 "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
                 "AllowLaterVersions" = "11:FALSE"
-                "InstallUrl" = "8:http://192.168.2.33/qcsetup/dotNetFx40_Full_x86_x64.exe"
+                "InstallUrl" = "8:http://192.168.39.201/dotnet.exe"
                 }
             }
         }
@@ -915,6 +939,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_135C528CB4854524A931FDBF3C7198CF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AppUpdate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_135C528CB4854524A931FDBF3C7198CF"
+                    {
+                    "Name" = "8:AppUpdate.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\..\\source\\repos\\app更新\\Update\\bin\\Debug\\AppUpdate.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1C321DF668538CF06EEC1EBF7465FE2E"
@@ -1101,57 +1156,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2E7E0FE220734BE3AA1673095E2DEDD1"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AppUpdate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2E7E0FE220734BE3AA1673095E2DEDD1"
-                    {
-                    "Name" = "8:AppUpdate.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\LTZN\\bin\\Debug\\AppUpdate.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2F7F2C3B779F4B738733029F220F9A78"
-            {
-            "SourcePath" = "8:..\\LTZN\\bin\\Debug\\AppUpdate.exe.config"
-            "TargetName" = "8:AppUpdate.exe.config"
-            "Tag" = "8:"
-            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A5B12DEFC5C6079D951ADF23A1B7C27"
@@ -1371,6 +1375,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_62FDBDBE996147F1ADAE8427C0BAA399"
+            {
+            "SourcePath" = "8:..\\..\\..\\source\\repos\\app更新\\Update\\bin\\Debug\\AppUpdate.exe.config"
+            "TargetName" = "8:AppUpdate.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6AE936227E392A6CC147A67AFBD03A17"
             {
             "AssemblyRegister" = "3:1"
@@ -1555,26 +1579,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E8F843E82C24E1A95E2307F82533821"
-            {
-            "SourcePath" = "8:..\\LTZN\\bin\\Debug\\AppUpdate.config"
-            "TargetName" = "8:AppUpdate.config"
-            "Tag" = "8:"
-            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8097C464950E601C5CDD807EA2DCE715"
@@ -1803,11 +1807,11 @@
                 {
                     "_C057FDB7167AACA0B140A7CBC98A71BD"
                     {
-                    "Name" = "8:Microsoft.ReportViewer.WinForms.DLL"
+                    "Name" = "8:Microsoft.ReportViewer.WinForms.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.ReportViewer.WinForms.DLL"
+            "SourcePath" = "8:Microsoft.ReportViewer.WinForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
@@ -1936,6 +1940,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E1AED871E537401A9D0AA746C526AF93"
+            {
+            "SourcePath" = "8:..\\..\\..\\source\\repos\\app更新\\Update\\bin\\Debug\\AppUpdate.config"
+            "TargetName" = "8:AppUpdate.config"
+            "Tag" = "8:"
+            "Folder" = "8:_67F1C0FFD64E4E168073276DAA786AFD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F5899CC30913DCA4E1C06B2DD9ABA56B"
@@ -2088,7 +2112,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:炼铁智能"
         "ProductCode" = "8:{BCC17834-1420-4DE8-B3A0-C5AA92DC3B6D}"
-        "PackageCode" = "8:{CA81E2E5-3D02-4D7C-ACCB-9A013DAB3ABD}"
+        "PackageCode" = "8:{C98E6608-5976-4D2D-AD5B-35FA5E0A6632}"
         "UpgradeCode" = "8:{FBF51391-AC7D-4FD3-A61C-9C17516799BC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

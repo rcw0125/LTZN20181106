@@ -667,6 +667,7 @@
             this.gridView_ddluci.OptionsView.ColumnAutoWidth = false;
             this.gridView_ddluci.OptionsView.ShowGroupPanel = false;
             this.gridView_ddluci.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView_ddluci_RowCellStyle);
+            this.gridView_ddluci.DoubleClick += new System.EventHandler(this.gridView_ddluci_DoubleClick);
             // 
             // colC_ID
             // 

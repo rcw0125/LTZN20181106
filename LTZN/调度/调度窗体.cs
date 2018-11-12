@@ -1681,5 +1681,12 @@ namespace LTZN.调度
 
 
         }
+
+        private void gridView_ddluci_DoubleClick(object sender, EventArgs e)
+        {
+            var currow = gridView_ddluci.GetFocusedRow() as ddluci;
+            updateDdluci frm = new updateDdluci();
+            frm.ShowDialog();
+        }
     }
 }
